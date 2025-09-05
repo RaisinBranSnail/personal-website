@@ -1,0 +1,6 @@
+.notebookDividerAccent {
+  background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);
+  background-size: 8px 1px;
+}
+
+

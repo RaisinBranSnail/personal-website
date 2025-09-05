@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- CSS variables (themes) ---- */
+:root{
+  --bg:#0F1216; --surface:#151A21; --text:#E6E8EB; --muted:#9AA3AF;
+  --primary:#4F8CFF; --accent:#00FF88; --border:#222833;
+}
+html[data-theme="sand"]{
+  --bg:#111; --surface:#E9E1D6; --text:#1C1C1C; --muted:#5E5A55;
+  --primary:#FF4D2E; --accent:#0C67F2; --border:#D6CDC1;
+}
+
+/* ---- Ensure background ---- */
+html, body, #__next, main, #main { background: var(--bg); }
+
+/* ---- Base ---- */
+* { box-sizing:border-box }
+html, body { height:100% }
+body {
+  margin:0;
+  background:
+    linear-gradient(transparent 95%, rgba(255,255,255,.02) 0) 0 0/100% 8px,
+    linear-gradient(90deg, transparent 95%, rgba(255,255,255,.02) 0) 0 0/8px 100%,
+    radial-gradient(1px 1px at 25% 50%, rgba(255,255,255,.03), transparent 60%) 0 0/64px 64px,
+    var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ---- Skip link ---- */
+.skip-link {
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus {
+  position:fixed; left:16px; top:16px; width:auto; height:auto;
+  background:var(--surface); color:var(--text); padding:8px 12px; border:1px solid var(--border);
+  border-radius:8px; z-index:9999;
+}
+
+/* ---- Blinking caret for .caret ---- */
+@media (prefers-reduced-motion:no-preference){
+  .caret::after { content:"\2588"; margin-left:4px; animation:blink 1s steps(1,end) infinite }
+}
+@keyframes blink { 50% { opacity:0 } }
+
+
