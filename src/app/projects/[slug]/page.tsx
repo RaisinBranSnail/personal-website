@@ -118,6 +118,9 @@ const PROJECTS: Record<string, {
     timeline: '2–3 weeks',
     responsibilities: ['Component library', 'GSAP timelines', 'SEO & metadata', 'Deploy pipeline'],
     features: ['Service pages', 'Case studies', 'Contact forms', 'Scroll animations'],
+    images: [
+      { src: '/images/origamiwebdesign/origami.png', alt: 'OrigamiWebDesign — Logo' },
+    ],
   },
 };
 

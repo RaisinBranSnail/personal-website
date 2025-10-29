@@ -204,8 +204,8 @@ export default function Home() {
             <Card title="~/origami-design" chrome="pixel-edge">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">🎨</span>
+                  <div className="w-12 h-12 rounded-lg overflow-hidden bg-white border border-[var(--border)] flex items-center justify-center">
+                    <Image src="/images/origamiwebdesign/origami.png" alt="OrigamiWebDesign icon" width={48} height={48} className="object-contain" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold">OrigamiWebDesign</h3>
