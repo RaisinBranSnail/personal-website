@@ -4,8 +4,8 @@
 
 /* ---- CSS variables (themes) ---- */
 :root{
-  --bg:#0F1216; --surface:#151A21; --text:#E6E8EB; --muted:#9AA3AF;
-  --primary:#4F8CFF; --accent:#00FF88; --border:#222833;
+  --bg:#0B0F14; --surface:#151A21; --text:#E6E8EB; --muted:#9AA3AF;
+  --primary:#00C8FF; --accent:#00FF88; --border:#222833;
 }
 html[data-theme="sand"]{
   --bg:#111; --surface:#E9E1D6; --text:#1C1C1C; --muted:#5E5A55;

@@ -35,7 +35,7 @@ export default function Header() {
             {[
               { href: '#home', label: 'Home' },
               { href: '#about', label: 'About' },
-              { href: '#work', label: 'Work' },
+              { href: '#works', label: 'Works' },
               { href: '#contact', label: 'Contact' },
             ].map(l => (
               <a key={l.href} href={l.href} className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative group">

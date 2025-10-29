@@ -40,8 +40,6 @@ export default function Card({
           return (
             <div className="flex items-center gap-1 h-10 px-4 bg-[var(--surface)]/60 backdrop-blur-md border-b border-[var(--border)]/30 shadow-lg">
               <span className="px-3 py-1.5 bg-[var(--accent)]/20 backdrop-blur-sm border border-[var(--accent)]/40 text-[var(--accent)] rounded-t-lg text-xs font-mono shadow-sm">About</span>
-              <span className="px-3 py-1.5 bg-[var(--surface)]/40 backdrop-blur-sm border border-[var(--border)]/20 text-[var(--muted)] rounded-t-lg text-xs font-mono hover:bg-[var(--surface)]/60 transition-colors">Stack</span>
-              <span className="px-3 py-1.5 bg-[var(--surface)]/40 backdrop-blur-sm border border-[var(--border)]/20 text-[var(--muted)] rounded-t-lg text-xs font-mono hover:bg-[var(--surface)]/60 transition-colors">Now</span>
             </div>
           );
       case 'notebook':

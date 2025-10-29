@@ -27,7 +27,7 @@ export default function Hero(){
             </div>
 
             <div className={styles['hero-button-group']}>
-              <a href="#work" className={styles['hero-primary-button']}>
+              <a href="#works" className={styles['hero-primary-button']}>
                 View Portfolio
               </a>
               <a href="#contact" className={styles['hero-secondary-button']}>
