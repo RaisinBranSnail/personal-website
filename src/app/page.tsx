@@ -209,7 +209,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold">OrigamiWebDesign</h3>
-                    <p className="text-[var(--muted)] text-sm">Creative Design Agency</p>
+                    <p className="text-[var(--muted)] text-sm">Creative Website Agency</p>
                   </div>
                 </div>
                 <p className="text-[var(--muted)] leading-relaxed">
