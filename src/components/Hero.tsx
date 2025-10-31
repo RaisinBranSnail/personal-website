@@ -68,7 +68,7 @@ export default function Hero(){
         <div className={styles['hero-stats-container']}>
           <div className={styles['hero-stats-grid']}>
             {[
-              { n: '024', l: 'Shipped Projects' },
+              { n: '5', l: 'Shipped Projects' },
               { n: '05', l: 'Years Coding' },
               { n: '120', l: 'Repos' },
             ].map(s => (
