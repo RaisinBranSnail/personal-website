@@ -141,7 +141,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold">Kims Mart Davis</h3>
-                    <p className="text-[var(--muted)] text-sm">Local Market E-commerce</p>
+                    <p className="text-[var(--muted)] text-sm">Family Grocery Store</p>
                   </div>
                 </div>
                 <p className="text-[var(--muted)] leading-relaxed">
