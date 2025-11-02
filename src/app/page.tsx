@@ -23,10 +23,14 @@ export default function Home() {
                 <span>🌙</span>
                 About Me
               </h2>
-              <p className="text-[var(--muted)] leading-relaxed text-lg">
-                Coder building clean interfaces and robust backend systems.
-                Based in Gilroy, always chasing that perfect commit and the next breakthrough.
-              </p>
+              <div className="space-y-4">
+                <p className="text-[var(--muted)] leading-relaxed text-lg">
+                  I'm Brandon Grimaldo — a web designer and developer based in California. I build clean, modern websites that blend design and function. My background in computer science and UI/UX lets me handle both the creative and technical sides of projects, from concept to launch.
+                </p>
+                <p className="text-[var(--muted)] leading-relaxed text-lg">
+                  I've built for small businesses, startups, and personal brands — creating sites that not only look good but also perform well. My work often focuses on detail, accessibility, and smooth user experience. Outside of client work, I'm always building new projects and refining my craft through design, code, and real-world experimentation.
+                </p>
+              </div>
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold">Tech Stack</h3>
                 <div className="flex flex-wrap gap-2">
@@ -63,7 +67,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Project 1 - Pioneer */}
             <Card title="~/pioneer" chrome="pixel-edge">
               <div className="space-y-4">
@@ -166,41 +170,7 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* Project 4 - VintageArchive */}
-            <Card title="~/vintage-archive" chrome="pixel-edge">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">📚</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">VintageArchive</h3>
-                    <p className="text-[var(--muted)] text-sm">Digital Archive Platform</p>
-                  </div>
-                </div>
-                <p className="text-[var(--muted)] leading-relaxed">
-                  A digital archive platform for preserving and showcasing vintage content. 
-                  Features advanced search, categorization, and media management.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Vue.js", "Node.js", "PostgreSQL", "AWS S3"].map((tech) => (
-                    <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex items-center gap-3 pt-2">
-                  <a href="#" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
-                    View Live →
-                  </a>
-                  <a href="/projects/vintage-archive" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
-                    View more →
-                  </a>
-                </div>
-              </div>
-            </Card>
-
-            {/* Project 5 - OrigamiWebDesign */}
+            {/* Project 4 - OrigamiWebDesign */}
             <Card title="~/origami-design" chrome="pixel-edge">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -224,7 +194,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="flex items-center gap-3 pt-2">
-                  <a href="#" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
+                  <a href="https://www.origamiwebdesign.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
                     View Live →
                   </a>
                   <a href="/projects/origami-design" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
