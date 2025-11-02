@@ -23,10 +23,14 @@ export default function Home() {
                 <span>🌙</span>
                 About Me
               </h2>
-              <p className="text-[var(--muted)] leading-relaxed text-lg">
-                Coder building clean interfaces and robust backend systems.
-                Based in Gilroy, always chasing that perfect commit and the next breakthrough.
-              </p>
+              <div className="space-y-4">
+                <p className="text-[var(--muted)] leading-relaxed text-lg">
+                  I'm Brandon Grimaldo a web designer and developer based in California. I build clean, modern websites that blend design and function. My background in computer science and UI/UX lets me handle both the creative and technical sides of projects, from concept to launch.
+                </p>
+                <p className="text-[var(--muted)] leading-relaxed text-lg">
+                  I've built for small businesses, startups, and personal brands creating sites that not only look good but also perform well. My work often focuses on detail, accessibility, and smooth user experience. Outside of client work, I'm always building new projects and refining my craft through design, code, and real-world experimentation.
+                </p>
+              </div>
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold">Tech Stack</h3>
                 <div className="flex flex-wrap gap-2">
