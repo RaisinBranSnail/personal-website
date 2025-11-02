@@ -5,8 +5,31 @@ import Hero from "@/components/Hero";
 import Card from "@/components/Card";
 import SocialBar from "@/components/SocialBar";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [copied, setCopied] = useState(false);
+
+  const copyResumeToClipboard = async () => {
+    try {
+      const response = await fetch('/images/brandonresume/Brandon Grimaldo Resume.pdf');
+      const blob = await response.blob();
+      const clipboardItem = new ClipboardItem({ 'application/pdf': blob });
+      await navigator.clipboard.write([clipboardItem]);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      // Fallback: copy the PDF link URL
+      try {
+        await navigator.clipboard.writeText(window.location.origin + '/images/brandonresume/Brandon Grimaldo Resume.pdf');
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch (e) {
+        console.error('Failed to copy:', e);
+      }
+    }
+  };
+
   return (
     <main id="main" className="min-h-screen">
       <div className="hidden lg:block fixed right-2 top-1/2 -translate-y-1/2 rotate-90 opacity-70 font-mono tracking-wider text-sm">
@@ -145,7 +168,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold">Kims Mart Davis</h3>
-                    <p className="text-[var(--muted)] text-sm">Family Grocery Store</p>
+                    <p className="text-[var(--muted)] text-sm">Local Market E-commerce</p>
                   </div>
                 </div>
                 <p className="text-[var(--muted)] leading-relaxed">
@@ -204,6 +227,50 @@ export default function Home() {
               </div>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Resume Section */}
+      <section id="resume" className="py-24">
+        <div className="max-w-7xl mx-auto px-8">
+          <Card title="~/resume" chrome="tabs">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <h2 className="text-2xl font-bold flex items-center gap-2">
+                  <span>📄</span>
+                  Resume
+                </h2>
+                <div className="flex items-center gap-4">
+                  <a 
+                    href="/images/brandonresume/Brandon Grimaldo Resume.pdf" 
+                    download="Brandon Grimaldo Resume.pdf"
+                    className="px-4 py-2 rounded-md bg-[var(--accent)]/20 text-[var(--accent)] border border-[var(--accent)]/30 hover:bg-[var(--accent)]/25 transition-colors font-mono text-sm"
+                  >
+                    Download Resume →
+                  </a>
+                  <button 
+                    onClick={copyResumeToClipboard}
+                    className="px-4 py-2 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 transition-colors font-mono text-sm"
+                  >
+                    {copied ? 'Copied!' : 'Copy Resume →'}
+                  </button>
+                </div>
+              </div>
+              <div className="w-full flex items-center justify-center border border-[var(--border)] rounded-lg overflow-hidden bg-[var(--surface)]/30 p-4">
+                <div className="max-w-6xl w-full" style={{ maxHeight: '85vh' }}>
+                  <Image
+                    src="/images/brandonresume/Brandon Grimaldo Resume-1.png"
+                    alt="Brandon Grimaldo Resume"
+                    width={1200}
+                    height={1600}
+                    className="w-full h-auto"
+                    style={{ maxHeight: '85vh', objectFit: 'contain' }}
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
       <SocialBar />

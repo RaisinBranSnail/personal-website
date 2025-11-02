@@ -96,6 +96,18 @@ const PROJECTS: Record<string, {
       { src: '/images/kimsmart/4.png', alt: 'Kims Mart — Checkout Flow' },
     ],
   },
+  'vintage-archive': {
+    title: 'VintageArchive',
+    summary: 'Digital archive for vintage media with robust search and categorization.',
+    tech: ['Vue.js', 'Node.js', 'PostgreSQL', 'AWS S3'],
+    deployment: 'Object storage for media, signed URLs for access, and nightly backups for database content.',
+    challenges: 'Designing efficient search over large metadata sets and secure media access.',
+    outcomes: 'Fast search response times and scalable media delivery with minimal operational overhead.',
+    role: 'Platform Engineer',
+    timeline: '10–12 weeks',
+    responsibilities: ['Schema design', 'Search strategy', 'Upload pipeline', 'Access controls'],
+    features: ['Faceted search', 'Collections', 'Asset pipeline', 'Admin moderation'],
+  },
   'origami-design': {
     title: 'OrigamiWebDesign',
     summary: 'Modern design agency site showcasing services and portfolio work with tasteful motion.',
