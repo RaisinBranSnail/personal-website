@@ -47,7 +47,7 @@ export default function Home() {
               </h2>
               <div className="space-y-4">
                 <p className="text-[var(--muted)] leading-relaxed text-lg">
-                  I'm Brandon Grimaldo a web designer and developer based in California. I build clean, modern websites that blend design and function. My background in computer science and UI/UX lets me handle both the creative and technical sides of projects, from concept to launch.
+                  I'm Brandon Grimaldo a web designer and developer based in California. I love creating clean, modern websites that blend design and function. My background in computer science and UI/UX lets me handle both the creative and technical sides of projects, from concept to launch.
                 </p>
                 <p className="text-[var(--muted)] leading-relaxed text-lg">
                   I've built for small businesses, startups, and personal brands creating sites that not only look good but also perform well. My work often focuses on detail, accessibility, and smooth user experience. Outside of client work, I'm always building new projects and refining my craft through design, code, and real-world experimentation.
@@ -90,75 +90,41 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Project 1 - Pioneer */}
-            <Card title="~/pioneer" chrome="pixel-edge">
+            {/* Project 1 - OrigamiWebDesign */}
+            <Card title="~/origami-design" chrome="pixel-edge">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-lg overflow-hidden bg-white border border-[var(--border)] flex items-center justify-center">
-                    <Image src="/images/pioneer/Pioneer_Icon.png" alt="Pioneer icon" width={48} height={48} className="object-contain translate-x-[6px]" />
+                    <Image src="/images/origamiwebdesign/origami.png" alt="OrigamiWebDesign icon" width={48} height={48} className="object-contain" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">Pioneer</h3>
-                    <p className="text-[var(--muted)] text-sm">Social Travel Map</p>
+                    <h3 className="text-xl font-bold">OrigamiWebDesign</h3>
+                    <p className="text-[var(--muted)] text-sm">Creative Website Agency</p>
                   </div>
                 </div>
                 <p className="text-[var(--muted)] leading-relaxed">
-                  A social map to discover places, build multi‑stop routes, and share trips with friends.
-                  Fast, Mapbox‑powered UX with geocoding and a streamlined trip planner.
+                  A modern design agency website showcasing creative services and portfolio work. 
+                  Features interactive elements, smooth transitions, and responsive layouts.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {["React 18", "Mapbox GL JS", "Supabase", "Framer Motion"].map((tech) => (
+                  {["React", "GSAP", "Sass", "Netlify"].map((tech) => (
                     <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="flex items-center gap-3 pt-2">
-                  <a href="https://www.officialpioneer.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
+                  <a href="https://www.origamiwebdesign.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
                     View Live →
                   </a>
-                  <a href="/projects/pioneer" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
+                  <a href="/projects/origami-design" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
                     View more →
                   </a>
                 </div>
               </div>
             </Card>
 
-            {/* Project 2 - Chloe Yap Portfolio */}
-            <Card title="~/chloe-portfolio" chrome="pixel-edge">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg overflow-hidden bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center">
-                    <Image src="/images/chloeyap/Chloe_Yap_Logo.png" alt="Chloe Yap logo" width={48} height={48} className="object-contain" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">Chloe Yap Portfolio</h3>
-                    <p className="text-[var(--muted)] text-sm">Creative Portfolio Website</p>
-                  </div>
-                </div>
-                <p className="text-[var(--muted)] leading-relaxed">
-                  A stunning portfolio website showcasing creative work and artistic projects. 
-                  Features smooth animations, responsive design, and elegant typography.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"].map((tech) => (
-                    <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex items-center gap-3 pt-2">
-                  <a href="https://chloeyap.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
-                    View Live →
-                  </a>
-                  <a href="/projects/chloe-portfolio" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
-                    View more →
-                  </a>
-                </div>
-              </div>
-            </Card>
-
-            {/* Project 3 - Kims Mart Davis */}
+            {/* Project 2 - Kims Mart Davis */}
             <Card title="~/kims-mart" chrome="pixel-edge">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -192,34 +158,68 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* Project 4 - OrigamiWebDesign */}
-            <Card title="~/origami-design" chrome="pixel-edge">
+            {/* Project 3 - Chloe Yap Portfolio */}
+            <Card title="~/chloe-portfolio" chrome="pixel-edge">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg overflow-hidden bg-white border border-[var(--border)] flex items-center justify-center">
-                    <Image src="/images/origamiwebdesign/origami.png" alt="OrigamiWebDesign icon" width={48} height={48} className="object-contain" />
+                  <div className="w-12 h-12 rounded-lg overflow-hidden bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center">
+                    <Image src="/images/chloeyap/Chloe_Yap_Logo.png" alt="Chloe Yap logo" width={48} height={48} className="object-contain" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">OrigamiWebDesign</h3>
-                    <p className="text-[var(--muted)] text-sm">Creative Website Agency</p>
+                    <h3 className="text-xl font-bold">Chloe Yap Portfolio</h3>
+                    <p className="text-[var(--muted)] text-sm">Creative Portfolio Website</p>
                   </div>
                 </div>
                 <p className="text-[var(--muted)] leading-relaxed">
-                  A modern design agency website showcasing creative services and portfolio work. 
-                  Features interactive elements, smooth transitions, and responsive layouts.
+                  A stunning portfolio website showcasing creative work and artistic projects. 
+                  Features smooth animations, responsive design, and elegant typography.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {["React", "GSAP", "Sass", "Netlify"].map((tech) => (
+                  {["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"].map((tech) => (
                     <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="flex items-center gap-3 pt-2">
-                  <a href="https://www.origamiwebdesign.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
+                  <a href="https://chloeyap.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
                     View Live →
                   </a>
-                  <a href="/projects/origami-design" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
+                  <a href="/projects/chloe-portfolio" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
+                    View more →
+                  </a>
+                </div>
+              </div>
+            </Card>
+
+            {/* Project 4 - Pioneer */}
+            <Card title="~/pioneer" chrome="pixel-edge">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-lg overflow-hidden bg-white border border-[var(--border)] flex items-center justify-center">
+                    <Image src="/images/pioneer/Pioneer_Icon.png" alt="Pioneer icon" width={48} height={48} className="object-contain translate-x-[6px]" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold">Pioneer</h3>
+                    <p className="text-[var(--muted)] text-sm">Social Travel Map</p>
+                  </div>
+                </div>
+                <p className="text-[var(--muted)] leading-relaxed">
+                  A social map to discover places, build multi‑stop routes, and share trips with friends.
+                  Fast, Mapbox‑powered UX with geocoding and a streamlined trip planner.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {["React 18", "Mapbox GL JS", "Supabase", "Framer Motion"].map((tech) => (
+                    <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center gap-3 pt-2">
+                  <a href="https://www.officialpioneer.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
+                    View Live →
+                  </a>
+                  <a href="/projects/pioneer" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
                     View more →
                   </a>
                 </div>

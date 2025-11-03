@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 
@@ -199,15 +200,29 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <main id="main" className="min-h-screen">
       <Header />
       {/* Lightbox overlay */}
+      <AnimatePresence>
       {lightboxOpen && hasGallery && (
-        <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={nextImage}>
+        <motion.div
+          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={nextImage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
           <button aria-label="Close" onClick={(e) => { e.stopPropagation(); closeLightbox(); }} className="absolute top-4 right-4 px-3 py-1 rounded-md bg-[var(--surface)]/80 border border-[var(--border)] text-[var(--text)] hover:bg-[var(--surface)]">
             Close
           </button>
           <div className="absolute top-4 left-4 text-[var(--muted)] font-mono text-sm">
             {currentImageIdx + 1} / {galleryImages.length}
           </div>
-          <div className="relative w-full max-w-5xl aspect-video" onClick={(e) => e.stopPropagation()}>
+          <motion.div
+            className="relative w-full max-w-5xl aspect-video"
+            onClick={(e) => e.stopPropagation()}
+            initial={{ scale: 0.98, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.98, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
             <Image
               key={galleryImages[currentImageIdx].src}
               src={galleryImages[currentImageIdx].src}
@@ -219,9 +234,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             />
             <button aria-label="Previous" onClick={prevImage} className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-black/40 text-white hover:bg-black/60">‹</button>
             <button aria-label="Next" onClick={nextImage} className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-black/40 text-white hover:bg-black/60">›</button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
+      </AnimatePresence>
       {/* Hero with gradient + breadcrumb */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
@@ -255,10 +271,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
       {/* Content */}
       <section className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="space-y-8">
           {/* Overview + Features */}
-          <div className="lg:col-span-2 space-y-8">
-            <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6">
+          <div className="space-y-8">
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               <h2 className="text-xl font-semibold mb-3">Overview</h2>
               <p className="text-[var(--muted)] leading-relaxed">
                 {isPioneer
@@ -292,9 +308,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6">
+            {/* Tech Stack integrated below Overview */}
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
+              <h2 className="text-xl font-semibold mb-3">Tech Stack</h2>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map(t => (
+                  <span key={t} className="px-2 py-0.5 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">{t}</span>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
               <h2 className="text-xl font-semibold mb-4">Key Features</h2>
               <ul className="grid sm:grid-cols-2 gap-3">
                 {project.features.map(f => (
@@ -304,7 +330,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {isChloe && (
               <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6">
@@ -332,7 +358,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             )}
 
             {/* Narrative case study */}
-            <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6 space-y-6">
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6 space-y-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               {project.designPhilosophy && (
                 <div>
                   <h2 className="text-xl font-semibold mb-2">Design Philosophy</h2>
@@ -357,7 +383,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 <h2 className="text-xl font-semibold mb-2">Deployment</h2>
                 <p className="text-[var(--muted)] leading-relaxed">{project.deployment}</p>
               </div>
-            </div>
+            </motion.div>
 
             {isChloe && (
               <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6">
@@ -384,17 +410,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             
           </div>
 
-          {/* Quick facts */}
-          <aside className="space-y-6">
-            <div className="bg-[var(--surface)]/70 border border-[var(--border)] rounded-2xl p-6">
-              <h3 className="font-semibold mb-3">Tech Stack</h3>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map(t => (
-                  <span key={t} className="px-2 py-0.5 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">{t}</span>
-                ))}
-              </div>
-            </div>
-          </aside>
         </div>
 
         {/* Callouts */}

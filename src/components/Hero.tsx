@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Hero.module.css';
 
@@ -16,32 +17,37 @@ export default function Hero(){
     <section id="home" className={styles['hero-section']}>
       <div className={styles['hero-container']}>
         <div className={styles['hero-grid']}>
-          <div className={styles['hero-content']}>
+          <motion.div
+            className={styles['hero-content']}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
             <div>
-              <h1 className={styles['hero-title']}>
+              <motion.h1 className={styles['hero-title']} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }}>
                 I&apos;m Brandon, a Software Engineer <code className="font-mono text-[var(--accent)]">() =&gt;</code>
-              </h1>
-              <p className={styles['hero-subtitle']}>
+              </motion.h1>
+              <motion.p className={styles['hero-subtitle']} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }}>
                 I love creating websites and software solutions React, Node, and Python.<span className="caret" />
-              </p>
+              </motion.p>
             </div>
 
-            <div className={styles['hero-button-group']}>
-              <a href="#works" className={styles['hero-secondary-button']}>
+            <motion.div className={styles['hero-button-group']} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35, duration: 0.4 }}>
+              <a href="/#works" className={styles['hero-secondary-button']}>
                 View Projects
               </a>
-              <a href="#resume" className={styles['hero-secondary-button']}>
+              <a href="/#resume" className={styles['hero-secondary-button']}>
                 View Resume
               </a>
-            </div>
+            </motion.div>
 
             <div className={styles['hero-scroll-indicator']}>
               <span className="font-mono">SCROLL ↓</span>
               <div className={styles['hero-scroll-line']} />
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles['hero-avatar-container']}>
+          <motion.div className={styles['hero-avatar-container']} initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}>
             <div className={styles['hero-avatar-wrapper']}>
               {/* soft glow behind avatar */}
               <div className={styles['hero-avatar-glow']} />
@@ -62,7 +68,7 @@ export default function Hero(){
               <div className={styles['hero-floating-dot-1']} />
               <div className={styles['hero-floating-dot-2']} />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className={styles['hero-stats-container']}>

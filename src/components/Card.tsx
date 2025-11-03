@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import styles from './Card.module.css'
 
 type ChromeStyle = 'pixel-edge' | 'none' | 'label' | 'tabs' | 'notebook';
@@ -59,9 +60,16 @@ export default function Card({
   };
 
   return (
-    <div className={`bg-[var(--surface)] border border-[var(--border)] rounded-2xl overflow-hidden shadow-lg transition-transform hover:-translate-y-0.5 ${className}`}>
+    <motion.div
+      className={`bg-[var(--surface)] border border-[var(--border)] rounded-2xl overflow-hidden shadow-lg ${className}`}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+      whileHover={{ y: -4, boxShadow: '0 12px 24px rgba(0,0,0,0.12)' }}
+    >
       {renderHeader()}
       <div className="p-6">{children}</div>
-    </div>
+    </motion.div>
   )
 }

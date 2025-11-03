@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [theme, setTheme] = useState<'dark'|'sand'>('dark')
+  const [worksOpen, setWorksOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10)
@@ -43,27 +45,33 @@ export default function Header() {
             ))}
             
             {/* Works dropdown */}
-            <div className="relative group">
+            <div
+              className="relative"
+              onMouseEnter={() => setWorksOpen(true)}
+              onMouseLeave={() => setWorksOpen(false)}
+            >
               <a href="/#works" className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative">
                 Works
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all group-hover:w-full" />
               </a>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-[var(--surface)] border border-[var(--border)] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2">
-                  <a href="/projects/pioneer" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">
-                    Pioneer
-                  </a>
-                  <a href="/projects/chloe-portfolio" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">
-                    Chloe Yap Portfolio
-                  </a>
-                  <a href="/projects/kims-mart" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">
-                    Kims Mart Davis
-                  </a>
-                  <a href="/projects/origami-design" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">
-                    OrigamiWebDesign
-                  </a>
-                </div>
-              </div>
+              <AnimatePresence>
+                {worksOpen && (
+                  <motion.div
+                    key="works-dd"
+                    className="absolute top-full left-0 mt-2 w-56 bg-[var(--surface)] border border-[var(--border)] rounded-lg shadow-lg z-50"
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                  >
+                    <div className="py-2">
+                      <a href="/projects/origami-design" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">OrigamiWebDesign</a>
+                      <a href="/projects/kims-mart" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Kims Mart Davis</a>
+                      <a href="/projects/chloe-portfolio" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Chloe Yap Portfolio</a>
+                      <a href="/projects/pioneer" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Pioneer</a>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <a href="/#resume" className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative group">
