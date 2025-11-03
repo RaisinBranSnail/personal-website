@@ -39,7 +39,7 @@ export default function Card({
               case 'tabs':
           return (
             <div className="flex items-center gap-1 h-10 px-4 bg-[var(--surface)]/60 backdrop-blur-md border-b border-[var(--border)]/30 shadow-lg">
-              <span className="px-3 py-1.5 bg-[var(--accent)]/20 backdrop-blur-sm border border-[var(--accent)]/40 text-[var(--accent)] rounded-t-lg text-xs font-mono shadow-sm">About</span>
+              <span className="px-3 py-1.5 bg-[var(--accent)]/20 backdrop-blur-sm border border-[var(--accent)]/40 text-[var(--accent)] rounded-t-lg text-xs font-mono shadow-sm">{title}</span>
             </div>
           );
       case 'notebook':

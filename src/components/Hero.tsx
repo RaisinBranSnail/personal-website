@@ -27,11 +27,11 @@ export default function Hero(){
             </div>
 
             <div className={styles['hero-button-group']}>
-              <a href="#works" className={styles['hero-primary-button']}>
-                View Portfolio
+              <a href="#works" className={styles['hero-secondary-button']}>
+                View Projects
               </a>
-              <a href="#contact" className={styles['hero-secondary-button']}>
-                Contact Me
+              <a href="#resume" className={styles['hero-secondary-button']}>
+                View Resume
               </a>
             </div>
 
@@ -68,9 +68,9 @@ export default function Hero(){
         <div className={styles['hero-stats-container']}>
           <div className={styles['hero-stats-grid']}>
             {[
-              { n: '5', l: 'Shipped Projects' },
+              { n: '4', l: 'Shipped Projects' },
               { n: '05', l: 'Years Coding' },
-              { n: '120', l: 'Repos' },
+              { n: '2', l: 'Internships' },
             ].map(s => (
               <div key={s.l} className={styles['hero-stat-item']}>
                 <div className={styles['hero-stat-number']}>{s.n}</div>

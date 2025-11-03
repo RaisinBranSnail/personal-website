@@ -86,7 +86,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
-  background-color: var(--primary);
+  background-color: var(--accent);
   color: white;
   font-weight: 600;
   border-radius: 0.5rem;
@@ -95,8 +95,10 @@
 }
 
 .hero-primary-button:hover {
-  box-shadow: 0 0 20px rgba(79, 140, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
   transform: scale(1.05);
+  background-color: var(--accent);
+  opacity: 0.9;
 }
 
 .hero-secondary-button {

@@ -42,8 +42,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8">
           <Card title="~/about" chrome="tabs">
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold flex items-center gap-2">
-                <span>🌙</span>
+              <h2 className="text-2xl font-bold">
                 About Me
               </h2>
               <div className="space-y-4">
@@ -233,11 +232,10 @@ export default function Home() {
       {/* Resume Section */}
       <section id="resume" className="py-24">
         <div className="max-w-7xl mx-auto px-8">
-          <Card title="~/resume" chrome="tabs">
+          <Card title="Resume" chrome="tabs">
             <div className="space-y-6">
               <div className="flex items-center justify-between gap-4 flex-wrap">
-                <h2 className="text-2xl font-bold flex items-center gap-2">
-                  <span>📄</span>
+                <h2 className="text-2xl font-bold">
                   Resume
                 </h2>
                 <div className="flex items-center gap-4">

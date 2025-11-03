@@ -18,6 +18,8 @@ const PROJECTS: Record<string, {
   features: string[];
   live?: string;
   images?: { src: string; alt: string }[];
+  designPhilosophy?: string;
+  targetAudience?: string;
 }> = {
   'pioneer': {
     title: 'Pioneer',
@@ -50,6 +52,8 @@ const PROJECTS: Record<string, {
       { src: '/images/pioneer/3.png', alt: 'Pioneer — Route Details' },
       { src: '/images/pioneer/4.png', alt: 'Pioneer — Settings' },
     ],
+    designPhilosophy: 'Fast, map-first exploration with minimal chrome; contextual actions; defaults that favor sharing and collaboration.',
+    targetAudience: 'Travelers, outdoor enthusiasts, and friends planning trips together.',
   },
   'chloe-portfolio': {
     title: 'Chloe Yap Portfolio',
@@ -76,6 +80,8 @@ const PROJECTS: Record<string, {
       { src: '/images/chloeyap/third_image.png', alt: 'Chloe portfolio — Immersive Experience' },
       { src: '/images/chloeyap/fourth%20page.png', alt: 'Chloe portfolio — Case Study Page' },
     ],
+    designPhilosophy: 'Typography-led presentation where motion communicates hierarchy; quiet grids that let the work speak; accessibility without sacrificing craft.',
+    targetAudience: 'Prospective clients and employers, fellow designers, and academic reviewers.',
   },
   'kims-mart': {
     title: 'Kims Mart Davis',
@@ -95,6 +101,8 @@ const PROJECTS: Record<string, {
       { src: '/images/kimsmart/3.png', alt: 'Kims Mart — Product Detail' },
       { src: '/images/kimsmart/4.png', alt: 'Kims Mart — Checkout Flow' },
     ],
+    designPhilosophy: 'Frictionless shopping with clear hierarchy, predictable flows, and trust-building microcopy and feedback.',
+    targetAudience: 'Local shoppers seeking quick, reliable ordering on mobile and desktop.',
   },
   'vintage-archive': {
     title: 'VintageArchive',
@@ -107,21 +115,42 @@ const PROJECTS: Record<string, {
     timeline: '10–12 weeks',
     responsibilities: ['Schema design', 'Search strategy', 'Upload pipeline', 'Access controls'],
     features: ['Faceted search', 'Collections', 'Asset pipeline', 'Admin moderation'],
+    designPhilosophy: 'Content-first browsing with faceted search; calm UI that scales with metadata density and preserves context.',
+    targetAudience: 'Archivists, researchers, and enthusiasts of vintage media.',
   },
   'origami-design': {
     title: 'OrigamiWebDesign',
-    summary: 'Modern design agency site showcasing services and portfolio work with tasteful motion.',
-    tech: ['React', 'GSAP', 'Sass', 'Netlify'],
-    deployment: 'Automated builds on main with prerendered pages and asset optimization.',
-    challenges: 'Creating performant animations while keeping the site accessible and SEO-friendly.',
-    outcomes: 'Cohesive brand experience with smooth interactions and solid performance metrics.',
-    role: 'Frontend Engineer',
-    timeline: '2–3 weeks',
-    responsibilities: ['Component library', 'GSAP timelines', 'SEO & metadata', 'Deploy pipeline'],
-    features: ['Service pages', 'Case studies', 'Contact forms', 'Scroll animations'],
-    images: [
-      { src: '/images/origamiwebdesign/origami.png', alt: 'OrigamiWebDesign — Logo' },
+    summary: 'Modern agency site to market services, showcase work, and drive leads via a validated contact funnel.',
+    tech: ['Next.js 14', 'React 18.2', 'Tailwind CSS 3.4', 'TypeScript 5', 'Zod', 'Nodemailer (SMTP)'],
+    deployment: 'Deployed on Vercel with automatic preview builds and main-branch production releases. Contact form emails are handled via SMTP using environment variables for secure configuration.',
+    challenges: 'Performance without layout shift, reliable email delivery, responsive grids, and SEO/semantics.',
+    outcomes: 'High Lighthouse locally (90s+ typical for Next/Tailwind), live contact funnel with SMTP email notifications, fast pages and easy content updates.',
+    role: 'Solo designer/developer',
+    timeline: '≈2–3 weeks (1.5 weeks build, 0.5–1.5 weeks polish/content)',
+    responsibilities: [
+      'Page builds: Home, About, Services, Projects, Blog, Contact',
+      'Components: Hero, CardsGrid, Pricing, Reviews, ReadingProgress, TableOfContents, StickyCTA, ContactForm',
+      'Contact API: /api/contact with Zod validation and Nodemailer SMTP',
+      'Accessibility pass, image optimization, and responsive layout work',
+      'Deployment setup and environment configuration'
     ],
+    features: [
+      'Services overview and details',
+      '4‑item portfolio grid',
+      'Blog listing and case studies',
+      'Validated contact form → SMTP email',
+      'Reading progress and sticky CTA',
+      'Responsive images and clean semantics'
+    ],
+    live: 'https://origamiwebdesign.com',
+    images: [
+      { src: '/images/origamiwebdesign/1.png', alt: 'OrigamiWebDesign — Landing' },
+      { src: '/images/origamiwebdesign/2.png', alt: 'OrigamiWebDesign — Services' },
+      { src: '/images/origamiwebdesign/3.png', alt: 'OrigamiWebDesign — Portfolio' },
+      { src: '/images/origamiwebdesign/4.png', alt: 'OrigamiWebDesign — Contact' },
+    ],
+    designPhilosophy: 'Clarity and speed; service-led storytelling with responsive layouts and strong contrast for readability.',
+    targetAudience: 'Small businesses and founders seeking a modern web presence and lead-generation funnel.',
   },
 };
 
@@ -304,10 +333,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {/* Narrative case study */}
             <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6 space-y-6">
-              {isChloe && (
+              {project.designPhilosophy && (
                 <div>
                   <h2 className="text-xl font-semibold mb-2">Design Philosophy</h2>
-                  <p className="text-[var(--muted)] leading-relaxed">Thoughtful identities and clean typographic systems that prioritize visual storytelling and meaningful experiences. Aesthetic appeal balanced with practical usability.</p>
+                  <p className="text-[var(--muted)] leading-relaxed">{project.designPhilosophy}</p>
                 </div>
               )}
               <div>
@@ -318,10 +347,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 <h2 className="text-xl font-semibold mb-2">Development</h2>
                 <p className="text-[var(--muted)] leading-relaxed">Built with {project.tech.join(', ')}. Emphasis on modular components, predictable state handling, and accessible interactions. Performance budgets guided media usage and bundle size.</p>
               </div>
-              {isChloe && (
+              {project.targetAudience && (
                 <div>
                   <h2 className="text-xl font-semibold mb-2">Target Audience</h2>
-                  <p className="text-[var(--muted)] leading-relaxed">Potential clients and employers, fellow designers, academic peers, and anyone interested in modern portfolio design.</p>
+                  <p className="text-[var(--muted)] leading-relaxed">{project.targetAudience}</p>
                 </div>
               )}
               <div>

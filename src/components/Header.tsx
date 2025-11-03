@@ -24,25 +24,52 @@ export default function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[var(--surface)]/80 backdrop-blur-md border-b border-[var(--border)]' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-[var(--accent)] rounded-md flex items-center justify-center">
               <span className="text-[var(--bg)] font-bold text-sm">B</span>
             </div>
             <span className="font-mono font-semibold text-lg">brandon.dev</span>
-          </div>
+          </a>
 
           <nav className="hidden md:flex items-center space-x-8">
             {[
-              { href: '#home', label: 'Home' },
-              { href: '#about', label: 'About' },
-              { href: '#works', label: 'Works' },
-              { href: '#contact', label: 'Contact' },
+              { href: '/#home', label: 'Home' },
+              { href: '/#about', label: 'About' },
             ].map(l => (
               <a key={l.href} href={l.href} className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative group">
                 {l.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all group-hover:w-full" />
               </a>
             ))}
+            
+            {/* Works dropdown */}
+            <div className="relative group">
+              <a href="/#works" className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative">
+                Works
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all group-hover:w-full" />
+              </a>
+              <div className="absolute top-full left-0 mt-2 w-48 bg-[var(--surface)] border border-[var(--border)] rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <a href="/projects/pioneer" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">
+                    Pioneer
+                  </a>
+                  <a href="/projects/chloe-portfolio" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">
+                    Chloe Yap Portfolio
+                  </a>
+                  <a href="/projects/kims-mart" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">
+                    Kims Mart Davis
+                  </a>
+                  <a href="/projects/origami-design" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">
+                    OrigamiWebDesign
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <a href="/#resume" className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative group">
+              Resume
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all group-hover:w-full" />
+            </a>
           </nav>
 
           <button onClick={toggleTheme} className="p-2 rounded-md hover:bg-[var(--surface)] transition-colors" aria-label={`Switch theme`}>
