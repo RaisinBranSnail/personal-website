@@ -58,7 +58,7 @@ export default function Hero(){
                   src="/images/IMG_0757.jpg"
                   alt="Brandon portrait"
                   fill
-                  sizes="(min-width:1024px) 20rem, 16rem"
+                  sizes="(min-width:1024px) 24rem, 16rem"
                   priority
                   className="object-cover"
                 />
