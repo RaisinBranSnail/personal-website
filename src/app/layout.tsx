@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, IBM_Plex_Mono } from 'next/font/google';
 import '../styles.css';
+import { Analytics } from '@vercel/analytics/react';
 
 import dynamic from 'next/dynamic';
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">Skip to main content</a>
         <BackgroundFX />
         {children}
+        <Analytics />
       </body>
     </html>
   );
