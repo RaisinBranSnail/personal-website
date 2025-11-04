@@ -64,7 +64,7 @@ export default function Header() {
                     exit={{ opacity: 0, y: 6 }}
                   >
                     <div className="py-2">
-                      <a href="/projects/origami-design" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">OrigamiWebDesign</a>
+                      <a href="/projects/origami-design" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Origami Web Design</a>
                       <a href="/projects/kims-mart" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Kims Mart Davis</a>
                       <a href="/projects/chloe-portfolio" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Chloe Yap Portfolio</a>
                       <a href="/projects/pioneer" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Pioneer</a>
@@ -81,7 +81,7 @@ export default function Header() {
           </nav>
 
           <button onClick={toggleTheme} className="p-2 rounded-md hover:bg-[var(--surface)] transition-colors" aria-label={`Switch theme`}>
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"></svg>
           </button>
         </div>
       </div>

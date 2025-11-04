@@ -69,7 +69,7 @@ export default function Card({
       whileHover={{ y: -4, boxShadow: '0 12px 24px rgba(0,0,0,0.12)' }}
     >
       {renderHeader()}
-      <div className="p-6">{children}</div>
+      <div className="p-4 sm:p-6">{children}</div>
     </motion.div>
   )
 }

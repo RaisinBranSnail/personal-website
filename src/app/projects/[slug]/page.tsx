@@ -120,7 +120,7 @@ const PROJECTS: Record<string, {
     targetAudience: 'Archivists, researchers, and enthusiasts of vintage media.',
   },
   'origami-design': {
-    title: 'OrigamiWebDesign',
+    title: 'Origami Web Design',
     summary: 'Modern agency site to market services, showcase work, and drive leads via a validated contact funnel.',
     tech: ['Next.js 14', 'React 18.2', 'Tailwind CSS 3.4', 'TypeScript 5', 'Zod', 'Nodemailer (SMTP)'],
     deployment: 'Deployed on Vercel with automatic preview builds and main-branch production releases. Contact form emails are handled via SMTP using environment variables for secure configuration.',
@@ -253,7 +253,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <span className="text-[var(--text)]">{project.title}</span>
           </nav>
           <div className="mt-4 flex items-center justify-between gap-4 flex-wrap">
-            <h1 className="text-4xl font-bold">{project.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold">{project.title}</h1>
             {project.live && (
               <a
                 href={project.live}
@@ -270,12 +270,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Content */}
-      <section className="max-w-5xl mx-auto px-6 pb-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
         <div className="space-y-8">
           {/* Overview + Features */}
           <div className="space-y-8">
-            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
-              <h2 className="text-xl font-semibold mb-3">Overview</h2>
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-5 sm:p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+              <h2 className="text-lg sm:text-xl font-semibold mb-3">Overview</h2>
               <p className="text-[var(--muted)] leading-relaxed">
                 {isPioneer
                   ? 'Discover spots, build multi‑stop routes, and share trips with friends, all in one fast Mapbox‑powered experience.'
@@ -320,8 +320,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </div>
             </motion.div>
 
-            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
-              <h2 className="text-xl font-semibold mb-4">Key Features</h2>
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-5 sm:p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
+              <h2 className="text-lg sm:text-xl font-semibold mb-4">Key Features</h2>
               <ul className="grid sm:grid-cols-2 gap-3">
                 {project.features.map(f => (
                   <li key={f} className="flex items-start gap-3">
@@ -358,29 +358,29 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             )}
 
             {/* Narrative case study */}
-            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6 space-y-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-5 sm:p-6 space-y-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               {project.designPhilosophy && (
                 <div>
-                  <h2 className="text-xl font-semibold mb-2">Design Philosophy</h2>
+                  <h2 className="text-lg sm:text-xl font-semibold mb-2">Design Philosophy</h2>
                   <p className="text-[var(--muted)] leading-relaxed">{project.designPhilosophy}</p>
                 </div>
               )}
               <div>
-                <h2 className="text-xl font-semibold mb-2">Design</h2>
+                <h2 className="text-lg sm:text-xl font-semibold mb-2">Design</h2>
                 <p className="text-[var(--muted)] leading-relaxed">Focused on clarity and speed: typography choices to improve scan-ability, high-contrast UI for readability, and a layout that highlights primary actions and content without distraction.</p>
               </div>
               <div>
-                <h2 className="text-xl font-semibold mb-2">Development</h2>
+                <h2 className="text-lg sm:text-xl font-semibold mb-2">Development</h2>
                 <p className="text-[var(--muted)] leading-relaxed">Built with {project.tech.join(', ')}. Emphasis on modular components, predictable state handling, and accessible interactions. Performance budgets guided media usage and bundle size.</p>
               </div>
               {project.targetAudience && (
                 <div>
-                  <h2 className="text-xl font-semibold mb-2">Target Audience</h2>
+                  <h2 className="text-lg sm:text-xl font-semibold mb-2">Target Audience</h2>
                   <p className="text-[var(--muted)] leading-relaxed">{project.targetAudience}</p>
                 </div>
               )}
               <div>
-                <h2 className="text-xl font-semibold mb-2">Deployment</h2>
+                <h2 className="text-lg sm:text-xl font-semibold mb-2">Deployment</h2>
                 <p className="text-[var(--muted)] leading-relaxed">{project.deployment}</p>
               </div>
             </motion.div>
