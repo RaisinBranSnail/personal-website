@@ -47,11 +47,69 @@ export default function Home() {
               </h2>
               <div className="space-y-3 sm:space-y-4">
                 <p className="text-[var(--muted)] leading-relaxed text-base sm:text-lg">
-                  I'm Brandon Grimaldo a web designer and developer based in California. I love creating clean, modern websites that blend design and function. My background in computer science and UI/UX lets me handle both the creative and technical sides of projects, from concept to launch.
+                  I'm Brandon Grimaldo, a web designer and developer based in California. I love creating clean, modern websites that blend design and function. My background in computer science and UI/UX lets me handle both the creative and technical sides of projects, from concept to launch.
                 </p>
                 <p className="text-[var(--muted)] leading-relaxed text-base sm:text-lg">
                   I've built for small businesses, startups, and personal brands creating sites that not only look good but also perform well. My work often focuses on detail, accessibility, and smooth user experience. Outside of client work, I'm always building new projects and refining my craft through design, code, and real-world experimentation.
                 </p>
+              </div>
+              <div className="space-y-4 mt-6">
+                <h3 className="text-lg font-semibold">Experience</h3>
+                <div className="space-y-4">
+                  {/* DKomplex Experience */}
+                  <div className="border-l-2 border-[var(--primary)] pl-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                      <div>
+                        <h4 className="font-semibold text-[var(--text)]">Full Stack Intern</h4>
+                        <p className="text-sm text-[var(--muted)]">DKomplex · Seaside, CA</p>
+                      </div>
+                      <span className="text-xs text-[var(--muted)] font-mono">Aug 2024 – Nov 2024</span>
+                    </div>
+                    <ul className="space-y-1.5 text-sm text-[var(--muted)]">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 text-[var(--accent)]">▸</span>
+                        <span>Built and maintained a <strong className="text-[var(--text)]">MERN stack</strong> web app to manage organizational roles and performance data</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 text-[var(--accent)]">▸</span>
+                        <span>Developed a dynamic <strong className="text-[var(--text)]">Role Specification Form</strong> in React with tabs and real-time input handling</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 text-[var(--accent)]">▸</span>
+                        <span>Implemented secure <strong className="text-[var(--text)]">JWT authentication</strong> and protected routes for user access control</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 text-[var(--accent)]">▸</span>
+                        <span>Created frontend components using <strong className="text-[var(--text)]">React and Tailwind CSS</strong>, integrated with Node.js/Express backend</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* SETI Institute Experience */}
+                  <div className="border-l-2 border-[var(--primary)] pl-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                      <div>
+                        <h4 className="font-semibold text-[var(--text)]">Data Analyst Intern</h4>
+                        <p className="text-sm text-[var(--muted)]">The SETI Institute · Mountain View, CA</p>
+                      </div>
+                      <span className="text-xs text-[var(--muted)] font-mono">Jun 2023 – Sep 2023</span>
+                    </div>
+                    <ul className="space-y-1.5 text-sm text-[var(--muted)]">
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 text-[var(--accent)]">▸</span>
+                        <span>Wrote Python scripts using <strong className="text-[var(--text)]">NumPy, Pandas, and Matplotlib</strong> to clean, process, and visualize pulsar radio wave data</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 text-[var(--accent)]">▸</span>
+                        <span>Automated extraction and transformation of raw <strong className="text-[var(--text)]">.fits telescope data</strong> into structured formats for analysis</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="mt-1.5 text-[var(--accent)]">▸</span>
+                        <span>Used <strong className="text-[var(--text)]">Jupyter Notebooks</strong> for reproducible research and collaboration with astrophysicists and data scientists</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold">Tech Stack</h3>
