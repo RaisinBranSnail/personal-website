@@ -233,6 +233,82 @@ export default function Home() {
                 </div>
               </div>
             </Card>
+
+            {/* Project 5 - Deep Signal Lab */}
+            <Card title="~/deep-signal-lab" chrome="pixel-edge">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-lg overflow-hidden bg-black border border-[var(--border)] flex items-center justify-center">
+                    <span className="text-xs font-mono text-[var(--muted)]">
+                      SETI
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="text-sm sm:text-xl font-bold">Deep Signal Lab</h3>
+                    <p className="hidden sm:block text-[var(--muted)] text-sm">SETI-Inspired Signal Anomaly Explorer</p>
+                  </div>
+                </div>
+                <div className="hidden sm:block space-y-2">
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    An anomaly detection system for monitoring radio telescope signals, designed to identify unusual patterns 
+                    in time-frequency data that might indicate signals of interest.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "Jupyter"].map((tech) => (
+                      <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-3 pt-2">
+                    <a href="/projects/deep-signal-lab" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
+                      View case study →
+                    </a>
+                    <a href="/deep-signal-lab" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
+                      View interactive explorer →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Project 6 - Churn Signal */}
+            <Card title="~/churn-signal" chrome="pixel-edge">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-lg overflow-hidden bg-[var(--accent)]/20 border border-[var(--border)] flex items-center justify-center">
+                    <span className="text-xs font-mono text-[var(--accent)]">
+                      CHURN
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="text-sm sm:text-xl font-bold">Churn Signal</h3>
+                    <p className="hidden sm:block text-[var(--muted)] text-sm">Customer Retention Analysis</p>
+                  </div>
+                </div>
+                <div className="hidden sm:block space-y-2">
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    A customer retention analysis that identifies at-risk segments and provides actionable recommendations 
+                    for reducing churn and improving customer lifetime value.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Python", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn", "Jupyter"].map((tech) => (
+                      <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-3 pt-2">
+                    <a href="/projects/churn-signal" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
+                      View case study →
+                    </a>
+                    <a href="/churn-signal" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
+                      View interactive explorer →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
