@@ -256,7 +256,43 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* Project 4 - Pioneer */}
+            {/* Project 4 - Sunny Day Socials */}
+            <Card title="~/sunny-day-socials" chrome="pixel-edge">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-lg overflow-hidden bg-white border border-[var(--border)] flex items-center justify-center shrink-0 p-2">
+                    <Image src="/images/sunny-day-socials/sun-icon.svg" alt="Sunny Day Socials sun logo" width={32} height={32} className="w-full h-full object-contain" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm sm:text-xl font-bold">Sunny Day Socials</h3>
+                    <p className="hidden sm:block text-[var(--muted)] text-sm">Hawaii Social &amp; Photo</p>
+                  </div>
+                </div>
+                <div className="hidden sm:block space-y-2">
+                  <p className="text-[var(--muted)] leading-relaxed">
+                    Multi-page marketing site for Hawaii social media management and photography: portfolio gallery,
+                    packages, services, and lead capture delivered in about a week.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {['Next.js 16', 'React 19', 'TypeScript', 'Tailwind v4'].map((tech) => (
+                      <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-3 pt-2">
+                    <a href="https://www.sunnydaysocials.com/" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
+                      View Live →
+                    </a>
+                    <a href="/projects/sunny-day-socials" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
+                      View more →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Project 5 - Pioneer */}
             <Card title="~/pioneer" chrome="pixel-edge">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -292,81 +328,41 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* Project 5 - Deep Signal Lab */}
-            <Card title="~/deep-signal-lab" chrome="pixel-edge">
+            {/* Project 6 - Kaizen Hosting */}
+            <Card title="~/kaizen-hosting" chrome="pixel-edge">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-lg overflow-hidden bg-black border border-[var(--border)] flex items-center justify-center">
-                    <span className="text-xs font-mono text-[var(--muted)]">
-                      SETI
-                    </span>
+                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-lg overflow-hidden bg-white border border-[var(--border)] flex items-center justify-center shrink-0 p-1.5">
+                    <Image src="/images/kaizen-hosting/logo.svg" alt="Kaizen Hosting logo" width={40} height={40} className="w-full h-full object-contain" />
                   </div>
                   <div>
-                    <h3 className="text-sm sm:text-xl font-bold">Deep Signal Lab</h3>
-                    <p className="hidden sm:block text-[var(--muted)] text-sm">SETI-Inspired Signal Anomaly Explorer</p>
+                    <h3 className="text-sm sm:text-xl font-bold">Kaizen Hosting</h3>
+                    <p className="hidden sm:block text-[var(--muted)] text-sm">Minecraft Server Hosting</p>
                   </div>
                 </div>
                 <div className="hidden sm:block space-y-2">
                   <p className="text-[var(--muted)] leading-relaxed">
-                    An anomaly detection system for monitoring radio telescope signals, designed to identify unusual patterns 
-                    in time-frequency data that might indicate signals of interest.
+                    Full-stack Minecraft host: marketing site, Supabase auth, and a Pterodactyl-powered dashboard for servers, files, and mods.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "Jupyter"].map((tech) => (
+                    {['Next.js 16', 'React 19', 'Supabase', 'Pterodactyl'].map((tech) => (
                       <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
                         {tech}
                       </span>
                     ))}
                   </div>
                   <div className="flex items-center gap-3 pt-2">
-                    <a href="/projects/deep-signal-lab" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
-                      View case study →
+                    <a href="https://www.kaizenhosting.com/" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
+                      View Live →
                     </a>
-                    <a href="/deep-signal-lab" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
-                      View interactive explorer →
+                    <a href="/projects/kaizen-hosting" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
+                      View more →
                     </a>
                   </div>
                 </div>
               </div>
             </Card>
 
-            {/* Project 6 - Churn Signal */}
-            <Card title="~/churn-signal" chrome="pixel-edge">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-lg overflow-hidden bg-[var(--accent)]/20 border border-[var(--border)] flex items-center justify-center">
-                    <span className="text-xs font-mono text-[var(--accent)]">
-                      CHURN
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-sm sm:text-xl font-bold">Churn Signal</h3>
-                    <p className="hidden sm:block text-[var(--muted)] text-sm">Customer Retention Analysis</p>
-                  </div>
-                </div>
-                <div className="hidden sm:block space-y-2">
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    A customer retention analysis that identifies at-risk segments and provides actionable recommendations 
-                    for reducing churn and improving customer lifetime value.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {["Python", "Pandas", "Scikit-learn", "Matplotlib", "Seaborn", "Jupyter"].map((tech) => (
-                      <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-3 pt-2">
-                    <a href="/projects/churn-signal" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
-                      View case study →
-                    </a>
-                    <a href="/churn-signal" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
-                      View interactive explorer →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Card>
           </div>
         </div>
       </section>
@@ -422,3 +418,4 @@ export default function Home() {
     </main>
   );
 }
+

@@ -153,133 +153,108 @@ const PROJECTS: Record<string, {
     designPhilosophy: 'Clarity and speed; service-led storytelling with responsive layouts and strong contrast for readability.',
     targetAudience: 'Small businesses and founders seeking a modern web presence and lead-generation funnel.',
   },
-  'deep-signal-lab': {
-    title: 'Deep Signal Lab – SETI-Inspired Signal Anomaly Explorer',
-    summary: 'An anomaly detection system for monitoring radio telescope signals, designed to identify unusual patterns in time-frequency data that might indicate signals of interest.',
-    tech: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'Jupyter Notebook'],
-    deployment: 'Analysis pipeline built with Jupyter notebooks and reproducible data generation. Results are documented with visualizations and exported for stakeholder review.',
-    challenges: 'Designing realistic synthetic signals for testing, choosing interpretable detection rules that balance sensitivity and false positives, and presenting findings in a way that technical and non-technical stakeholders can understand.',
-    outcomes: 'A working anomaly detection pipeline that can process time-frequency data, flag unusual events, and provide clear visualizations for follow-up investigation. The system uses robust statistical methods (median + MAD) that handle noisy backgrounds better than simple thresholds.',
-    role: 'Data Analyst / Data Scientist',
-    timeline: 'Exploration → data generator → EDA → anomaly models → documentation',
+  'sunny-day-socials': {
+    title: 'Sunny Day Socials',
+    summary:
+      'A Hawaii-focused marketing site for social media management and photography: multi-page build with portfolio gallery, packages, services, testimonials, and lead capture, shipped in about one week.',
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4'],
+    deployment:
+      'Static marketing site deployed to production with no CMS. Content and pages ship as part of the Next.js app.',
+    challenges:
+      'Tight one-week timeline while wiring backend flows and supporting frontend polish across hero, packages, portfolio lightbox, services, and contact without a CMS layer.',
+    outcomes:
+      'Live multi-page presence at sunnydaysocials.com with clear service positioning, portfolio showcase, package paths, and contact capture, delivered as backend development plus frontend support on the client timeline.',
+    role: 'Backend development & frontend support',
+    timeline: '~1 week',
     responsibilities: [
-      'Framed the problem as monitoring a noisy radio environment for unusual signals',
-      'Designed and implemented a synthetic signal generator with labeled anomalies for testing',
-      'Ran exploratory analysis on time-series and spectrogram-style views',
-      'Implemented interpretable anomaly detection rules and validated with ML-based methods',
-      'Created annotated visuals and documented findings for team review',
+      'Backend development for site functionality and integrations',
+      'Frontend support across marketing pages and interactive portfolio gallery',
+      'Packages, services, testimonials, and contact/lead capture flows',
+      'No CMS; content structured directly in the Next.js codebase',
     ],
     features: [
-      'Synthetic SETI-inspired time–frequency dataset with labeled anomalies',
-      'Spectrograms with highlighted candidate signals and bursts',
-      'Time-series plots with anomaly overlays and threshold explanations',
-      'Rule-based and ML-assisted anomaly detection approaches',
-      'Plain-language insights that connect to real-world analytics problems',
+      'Home hero with soulful-brand positioning and primary CTAs',
+      'Packages page for service tiers and inquiry paths',
+      'Portfolio gallery with lightbox for photography and social work',
+      'Services and contact sections with testimonials and lead capture',
     ],
+    live: 'https://www.sunnydaysocials.com/',
     images: [
-      { src: '/images/deep-signal-lab/1.png', alt: 'Deep Signal Lab — Overview spectrogram with anomalies highlighted' },
-      { src: '/images/deep-signal-lab/2.png', alt: 'Deep Signal Lab — Time-series with anomaly flags over time' },
-      { src: '/images/deep-signal-lab/3.png', alt: 'Deep Signal Lab — Distribution of power with highlighted outliers' },
-      { src: '/images/deep-signal-lab/4.png', alt: 'Deep Signal Lab — Zoomed-in view of a drifting narrowband candidate signal' },
+      { src: '/images/sunny-day-socials/1.png', alt: 'Sunny Day Socials, home hero' },
+      { src: '/images/sunny-day-socials/2.png', alt: 'Sunny Day Socials, packages' },
+      { src: '/images/sunny-day-socials/3.png', alt: 'Sunny Day Socials, portfolio gallery' },
+      { src: '/images/sunny-day-socials/4.png', alt: 'Sunny Day Socials, contact' },
     ],
-    designPhilosophy: 'Focus on clarity and interpretability: simple color palettes, clear annotations, and layouts that make it easy to understand what the system is detecting and why.',
-    targetAudience: 'Technical teams and stakeholders who need to understand signal monitoring systems and anomaly detection workflows.',
+    designPhilosophy:
+      'Warm, soulful-first marketing: sun-and-dash brand mark, approachable typography, breathable sections, and trust through testimonials.',
+    targetAudience:
+      'Soulful Hawaii-area brands needing social presence and onsite creative production.',
   },
-  'churn-signal': {
-    title: 'Churn Signal – Customer Retention Analysis',
-    summary: 'A customer retention analysis that identifies at-risk segments and provides actionable recommendations for reducing churn and improving customer lifetime value.',
-    tech: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'Jupyter Notebook'],
-    deployment: 'Analysis pipeline built with Jupyter notebooks and reproducible data processing. Results are documented with visualizations and presented to the product and customer success teams.',
-    challenges: 'Creating a segmentation model that balances predictive accuracy with interpretability, identifying which customer behaviors are most predictive of churn, and translating findings into concrete retention strategies that the team can execute.',
-    outcomes: 'A working churn analysis pipeline that segments customers by risk level, identifies key churn drivers (payment issues, inactivity, low feature usage), and provides prioritized recommendations. The model helps focus retention efforts on high-risk customers where intervention has the most impact.',
-    role: 'Data Analyst',
-    timeline: 'Problem framing → data analysis → cohort analysis → segmentation → modeling → recommendations',
+  'kaizen-hosting': {
+    title: 'Kaizen Hosting',
+    summary:
+      'Full-stack Minecraft hosting product: marketing landing, Supabase auth, Express API, and a Pterodactyl-powered dashboard to provision servers, manage files, and install mods.',
+    tech: [
+      'Next.js 16',
+      'React 19',
+      'TypeScript',
+      'Tailwind CSS v4',
+      'Supabase',
+      'Express',
+      'Pterodactyl',
+      'Vercel',
+    ],
+    deployment:
+      'Next.js app on Vercel (Webpack build for ssh2 compatibility) with a separate Express backend for Pterodactyl lifecycle, file uploads, console proxy, and ownership checks. Supabase handles auth and data.',
+    challenges:
+      'Unblocking Vercel production builds with native ssh2 under Turbopack (serverExternalPackages, lazy loading, dynamic imports, Webpack build). Provisioning across multiple Pterodactyl loaders and eggs with env-driven configuration. Landing polish: custom wave sections, hero parallax with reduced-motion support, and a cohesive green brand system without a separate design handoff.',
+    outcomes:
+      'Shipped landing plus authenticated app shell: server create/control, file manager, and Modrinth/CurseForge install flows wired to the panel API pattern. Production deploy path unblocked on Vercel; billing UI scaffolded for future payment integration.',
+    role: 'Solo full-stack developer (product, UI, frontend, backend)',
+    timeline: 'May 10–17, 2026 (~1 week active development)',
     responsibilities: [
-      'Identified the problem: need to proactively identify at-risk customers before they churn',
-      'Built a customer dataset and performed exploratory analysis to understand churn patterns',
-      'Performed cohort analysis to track retention rates over time by signup period',
-      'Developed customer segmentation models to identify high-risk groups',
-      'Analyzed feature importance to understand which factors drive churn',
-      'Created visualizations and presented recommendations to stakeholders',
+      'Designed and built the marketing site (App Router, Tailwind, responsive sections)',
+      'Implemented Supabase auth and protected dashboard shell',
+      'Built Express backend for Pterodactyl server lifecycle, uploads, console proxy, and ownership checks',
+      'Wired Modrinth and CurseForge mod and modpack search/install pipelines',
+      'Created server dashboard UI: create server, workspace, stats, and file manager',
+      'Integrated Pterodactyl provisioning, start/stop/restart, allocations, and multi-loader eggs',
+      'Resolved production deploy issues (Vercel, ssh2, serverless limits)',
+      'Added brand system: leaf/infinity mark, landing visuals, and hero server panel mock',
     ],
     features: [
-      'Synthetic customer dataset with behavioral and transactional features',
-      'Cohort retention analysis by signup month',
-      'Churn rate analysis across multiple customer segments',
-      'Feature importance analysis using tree-based models',
-      'Risk-based customer segmentation (Low/Medium/High risk)',
-      'Business recommendations tied to data insights',
+      'Hero with parallax server panel mock and console preview',
+      'Pricing tiers (Starter, Pro, Ultimate) with glass-style cards',
+      'Mod platform showcase (Fabric, Forge, Paper, Quilt, Modrinth, CurseForge)',
+      'Performance section with regions, uptime, and boot-time highlights',
+      'FAQ and conversion footer with primary CTAs',
+      'Authenticated dashboard: server list, workspace, files, mods, profile',
+      'Server provisioning flow with loader/version/RAM selection',
+      'Billing UI scaffold (payments not yet integrated)',
     ],
+    live: 'https://www.kaizenhosting.com/',
     images: [
-      { src: '/images/churn-signal/1.png', alt: 'Churn Signal — Retention rate by signup cohort' },
-      { src: '/images/churn-signal/2.png', alt: 'Churn Signal — Churn rates by key segments' },
-      { src: '/images/churn-signal/3.png', alt: 'Churn Signal — Feature importance for churn prediction' },
-      { src: '/images/churn-signal/4.png', alt: 'Churn Signal — Customer distribution by risk segment' },
+      { src: '/images/kaizen-hosting/1.png', alt: 'Kaizen Hosting, home hero and server panel' },
+      { src: '/images/kaizen-hosting/2.png', alt: 'Kaizen Hosting, pricing' },
+      { src: '/images/kaizen-hosting/3.png', alt: 'Kaizen Hosting, mod support and performance' },
+      { src: '/images/kaizen-hosting/4.png', alt: 'Kaizen Hosting, FAQ and CTA' },
     ],
-    designPhilosophy: 'Business-first approach: every analysis should answer "so what?" and connect directly to actionable recommendations. Use clear segmentation and risk scoring so the team can prioritize retention efforts effectively.',
-    targetAudience: 'Product managers, customer success teams, and business stakeholders who need to understand churn patterns and prioritize retention initiatives.',
+    designPhilosophy:
+      'Nature-meets-tech: Minecraft landscapes as backdrop, glass cards, organic wave dividers, and a consistent Kaizen green system that reads premium and approachable.',
+    targetAudience:
+      'Minecraft server owners and modded communities who want fast setup, panel control, and mod installs without managing infrastructure by hand.',
   },
 };
-
-const DEEP_SIGNAL_CAPTIONS: { title: string; body: string }[] = [
-  {
-    title: 'Spectrogram overview',
-    body:
-      'This plot shows the simulated radio spectrogram: time left to right, frequency bottom to top, and brightness as signal power. You can see the noisy background, steady narrowband lines, and injected bursts and drifting tracks that the detector is meant to find.',
-  },
-  {
-    title: 'Average power over time with anomalies',
-    body:
-      'Here the spectrogram is collapsed into a single time-series so you can see when the overall system is quiet versus spiky. Highlighted points mark times where the anomaly rules think something stands out enough to raise an alert.',
-  },
-  {
-    title: 'Power distribution and anomaly tail',
-    body:
-      'This chart shows the distribution of power values, with flagged anomalies sitting in the extreme right tail. It makes the detector easy to explain: we are deliberately focusing on the rarest, strongest events instead of everyday noise.',
-  },
-  {
-    title: 'Zoomed-in drifting candidate',
-    body:
-      'A zoomed window around a drifting narrowband signal: a narrow bright streak that changes frequency over time. This illustrates the kind of "candidate event" you might investigate further after an alert fires.',
-  },
-];
-
-const CHURN_SIGNAL_CAPTIONS: { title: string; body: string }[] = [
-  {
-    title: 'Retention rate by signup cohort',
-    body:
-      'This chart tracks retention rates for customers who signed up in each month. You can see how retention varies by cohort, which helps identify if recent changes to onboarding or product features are affecting customer stickiness.',
-  },
-  {
-    title: 'Churn rates by key segments',
-    body:
-      'Four views showing churn rates across different customer dimensions: subscription tier, tenure length, payment issues, and login activity. This segmentation helps identify which customer groups are most at risk and where to focus retention efforts.',
-  },
-  {
-    title: 'Feature importance for churn prediction',
-    body:
-      'A tree-based model shows which customer attributes are most predictive of churn. Factors like payment issues, days since last login, and tenure are weighted by their importance, helping prioritize which signals to monitor in a retention system.',
-  },
-  {
-    title: 'Customer distribution by risk segment',
-    body:
-      'Customers are segmented into Low, Medium, and High risk groups based on a composite risk score. This segmentation enables targeted retention campaigns: focus resources on High Risk customers while maintaining engagement with Medium Risk to prevent escalation.',
-  },
-];
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = PROJECTS[params.slug];
   const isChloe = params.slug === 'chloe-portfolio';
   const isPioneer = params.slug === 'pioneer';
-  const isDeepSignal = params.slug === 'deep-signal-lab';
-  const isChurnSignal = params.slug === 'churn-signal';
 
   // Lightbox state for screenshots (use per-project images if provided)
   const galleryImages: { src: string; alt: string }[] = (project as any).images ?? [];
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
-  const [deepSignalIdx, setDeepSignalIdx] = useState(0);
-  const [churnSignalIdx, setChurnSignalIdx] = useState(0);
   const hasGallery = galleryImages.length > 0;
 
   const openLightbox = (idx: number) => {
@@ -381,22 +356,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   Visit live site →
                 </a>
               )}
-              {isDeepSignal && (
-                <Link
-                  href="/deep-signal-lab"
-                  className="px-4 py-2 rounded-md border border-[var(--border)] hover:bg-[var(--surface)]/70 text-sm font-mono"
-                >
-                  Open interactive explorer →
-                </Link>
-              )}
-              {isChurnSignal && (
-                <Link
-                  href="/churn-signal"
-                  className="px-4 py-2 rounded-md border border-[var(--border)] hover:bg-[var(--surface)]/70 text-sm font-mono"
-                >
-                  Open interactive explorer →
-                </Link>
-              )}
             </div>
           </div>
           <p className="text-[var(--muted)] mt-3 max-w-3xl">{project.summary}</p>
@@ -416,124 +375,31 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   : project.summary}
               </p>
               <div className="mt-6">
-                <h3 className="text-lg font-semibold mb-3">
-                  Screenshots
-                  {(isDeepSignal || isChurnSignal) && hasGallery && (
-                    <span className="ml-2 text-sm font-mono text-[var(--muted)]">
-                      {isDeepSignal
-                        ? (deepSignalIdx % galleryImages.length) + 1
-                        : (churnSignalIdx % galleryImages.length) + 1}
-                      /{galleryImages.length}
-                    </span>
+                <h3 className="text-lg font-semibold mb-3">Screenshots</h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {galleryImages.length > 0 ? (
+                    galleryImages.map((img, idx) => (
+                      <button key={img.src} onClick={() => openLightbox(idx)} className="relative aspect-video rounded-xl border border-[var(--border)] overflow-hidden group">
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          sizes="(min-width: 1024px) 50vw, 100vw"
+                          className="object-cover"
+                          priority={idx === 0}
+                        />
+                        <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                      </button>
+                    ))
+                  ) : (
+                    <>
+                      <div className="aspect-video rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)]/60 flex items-center justify-center text-[var(--muted)]">Hero image</div>
+                      <div className="aspect-video rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)]/60 flex items-center justify-center text-[var(--muted)]">Feature section</div>
+                      <div className="aspect-video rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)]/60 flex items-center justify-center text-[var(--muted)]">Mobile view</div>
+                      <div className="aspect-video rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)]/60 flex items-center justify-center text-[var(--muted)]">Dashboard</div>
+                    </>
                   )}
-                </h3>
-                {isDeepSignal || isChurnSignal ? (
-                  <div className="space-y-3">
-                    <div className="relative aspect-video rounded-xl border border-[var(--border)] overflow-hidden group">
-                      {galleryImages.length > 0 ? (
-                        <>
-                          <button
-                            onClick={() => openLightbox(isDeepSignal ? deepSignalIdx : churnSignalIdx)}
-                            className="absolute inset-0"
-                            aria-label={`Open ${isDeepSignal ? 'Deep Signal' : 'Churn Signal'} plot`}
-                          >
-                            <Image
-                              src={galleryImages[(isDeepSignal ? deepSignalIdx : churnSignalIdx) % galleryImages.length].src}
-                              alt={galleryImages[(isDeepSignal ? deepSignalIdx : churnSignalIdx) % galleryImages.length].alt}
-                              fill
-                              sizes="(min-width: 1024px) 60vw, 100vw"
-                              className="object-contain bg-[var(--bg)]"
-                              priority
-                            />
-                            <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-                          </button>
-                          <div className="absolute inset-y-0 left-0 flex items-center pl-2">
-                            <button
-                              type="button"
-                              aria-label="Previous screenshot"
-                              onClick={() =>
-                                hasGallery &&
-                                (isDeepSignal
-                                  ? setDeepSignalIdx((i) =>
-                                      (i + galleryImages.length - 1) % galleryImages.length
-                                    )
-                                  : setChurnSignalIdx((i) =>
-                                      (i + galleryImages.length - 1) % galleryImages.length
-                                    ))
-                              }
-                              className="hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-black/40 text-white hover:bg-black/60 text-sm"
-                            >
-                              ‹
-                            </button>
-                          </div>
-                          <div className="absolute inset-y-0 right-0 flex items-center pr-2">
-                            <button
-                              type="button"
-                              aria-label="Next screenshot"
-                              onClick={() =>
-                                hasGallery &&
-                                (isDeepSignal
-                                  ? setDeepSignalIdx((i) => (i + 1) % galleryImages.length)
-                                  : setChurnSignalIdx((i) => (i + 1) % galleryImages.length))
-                              }
-                              className="hidden sm:flex items-center justify-center w-8 h-8 rounded-full bg-black/40 text-white hover:bg-black/60 text-sm"
-                            >
-                              ›
-                            </button>
-                          </div>
-                          <div className="absolute bottom-2 right-3 px-2 py-0.5 rounded-full bg-black/50 text-[var(--muted)] text-xs font-mono">
-                            {((isDeepSignal ? deepSignalIdx : churnSignalIdx) % galleryImages.length) + 1} / {galleryImages.length}
-                          </div>
-                        </>
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center text-[var(--muted)]">
-                          {isDeepSignal ? 'Spectrogram overview' : 'Retention analysis'}
-                        </div>
-                      )}
-                    </div>
-                    <div className="text-[var(--muted)] text-sm leading-relaxed space-y-1">
-                      <p className="font-semibold text-[var(--text)]">
-                        {isDeepSignal
-                          ? (DEEP_SIGNAL_CAPTIONS[deepSignalIdx % DEEP_SIGNAL_CAPTIONS.length]?.title ??
-                              'Deep Signal Lab plot')
-                          : (CHURN_SIGNAL_CAPTIONS[churnSignalIdx % CHURN_SIGNAL_CAPTIONS.length]?.title ??
-                              'Churn Signal plot')}
-                      </p>
-                      <p>
-                        {isDeepSignal
-                          ? (DEEP_SIGNAL_CAPTIONS[deepSignalIdx % DEEP_SIGNAL_CAPTIONS.length]?.body ??
-                              'This plot is one of the core Deep Signal Lab views, used to explore the simulated radio environment and highlight anomalies.')
-                          : (CHURN_SIGNAL_CAPTIONS[churnSignalIdx % CHURN_SIGNAL_CAPTIONS.length]?.body ??
-                              'This plot is one of the core Churn Signal views, used to analyze customer retention patterns and identify at-risk segments.')}
-                      </p>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {galleryImages.length > 0 ? (
-                      galleryImages.map((img, idx) => (
-                        <button key={img.src} onClick={() => openLightbox(idx)} className="relative aspect-video rounded-xl border border-[var(--border)] overflow-hidden group">
-                          <Image
-                            src={img.src}
-                            alt={img.alt}
-                            fill
-                            sizes="(min-width: 1024px) 50vw, 100vw"
-                            className="object-cover"
-                            priority={idx === 0}
-                          />
-                          <span className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-                        </button>
-                      ))
-                    ) : (
-                      <>
-                        <div className="aspect-video rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)]/60 flex items-center justify-center text-[var(--muted)]">Hero image</div>
-                        <div className="aspect-video rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)]/60 flex items-center justify-center text-[var(--muted)]">Feature section</div>
-                        <div className="aspect-video rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)]/60 flex items-center justify-center text-[var(--muted)]">Mobile view</div>
-                        <div className="aspect-video rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg)]/60 flex items-center justify-center text-[var(--muted)]">Dashboard</div>
-                      </>
-                    )}
-                  </div>
-                )}
+                </div>
               </div>
             </motion.div>
 
@@ -610,23 +476,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 <h2 className="text-lg sm:text-xl font-semibold mb-2">Deployment</h2>
                 <p className="text-[var(--muted)] leading-relaxed">{project.deployment}</p>
               </div>
-              {isDeepSignal && (
-                <div className="space-y-2">
-                  <h2 className="text-lg sm:text-xl font-semibold mb-2">How to read these plots</h2>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    The main spectrogram (time × frequency) shows what the \"radio sky\" looks like over time: most of the frame is background noise, while bright streaks and bursts
-                    are unusually strong activity at specific frequencies.
-                  </p>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    The time-series charts collapse that into a single signal so you can see when the overall system is quiet versus spiky; highlighted points are where a robust
-                    z-score detector believes something stands out enough to raise an alert.
-                  </p>
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    Finally, the distribution views show that most flags sit in the extreme right tail of the power values rather than in the bulk of the noise, making the detector
-                    easy to explain to non-technical stakeholders as \"we only alert on the rarest, strongest events\".
-                  </p>
-                </div>
-              )}
             </motion.div>
 
             {isChloe && (
