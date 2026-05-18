@@ -292,43 +292,8 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* Project 5 - Pioneer */}
-            <Card title="~/pioneer" chrome="pixel-edge">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 md:w-12 md:h-12 rounded-lg overflow-hidden bg-white border border-[var(--border)] flex items-center justify-center">
-                    <Image src="/images/pioneer/Pioneer_Icon.png" alt="Pioneer icon" width={48} height={48} className="w-full h-full object-contain" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm sm:text-xl font-bold">Pioneer</h3>
-                    <p className="hidden sm:block text-[var(--muted)] text-sm">Social Travel Map</p>
-                  </div>
-                </div>
-                <div className="hidden sm:block space-y-2">
-                  <p className="text-[var(--muted)] leading-relaxed">
-                    A social map to discover places, build multi‑stop routes, and share trips with friends.
-                    Fast, Mapbox‑powered UX with geocoding and a streamlined trip planner.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {["React 18", "Mapbox GL JS", "Supabase", "Framer Motion"].map((tech) => (
-                      <span key={tech} className="px-2 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded text-xs font-mono">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-3 pt-2">
-                    <a href="https://www.officialpioneer.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1 rounded-md bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--bg)] text-sm font-mono transition-colors">
-                      View Live →
-                    </a>
-                    <a href="/projects/pioneer" className="px-3 py-1 rounded-md border border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]/60 text-sm font-mono transition-colors">
-                      View more →
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Card>
+            {/* Project 5 - Kaizen Hosting */}
 
-            {/* Project 6 - Kaizen Hosting */}
             <Card title="~/kaizen-hosting" chrome="pixel-edge">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
