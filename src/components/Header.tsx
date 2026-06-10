@@ -1,90 +1,144 @@
 'use client';
 
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const WORK_LINKS = [
+  { href: '/projects/origami-design', label: 'Origami Web Design' },
+  { href: '/projects/kims-mart', label: 'Kims Mart Davis' },
+  { href: '/projects/chloe-portfolio', label: 'Chloe Yap Portfolio' },
+  { href: '/projects/sunny-day-socials', label: 'Sunny Day Socials' },
+  { href: '/projects/kaizen-hosting', label: 'Kaizen Hosting' },
+];
+
+const NAV_LINKS = [
+  { href: '/#home', label: 'HOME' },
+  { href: '/#about', label: 'ABOUT' },
+  { href: '/#resume', label: 'RESUME' },
+  { href: '/#contact', label: 'CONTACT' },
+];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [theme, setTheme] = useState<'dark'|'sand'>('dark')
-  const [worksOpen, setWorksOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [worksOpen, setWorksOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 10)
-    window.addEventListener('scroll', onScroll)
-    const current = (document.documentElement.getAttribute('data-theme') as 'dark'|'sand') || 'dark'
-    setTheme(current)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-  const toggleTheme = () => {
-    const next = theme === 'dark' ? 'sand' : 'dark'
-    setTheme(next)
-    document.documentElement.setAttribute('data-theme', next)
-  }
+  const navLink =
+    'inline-block font-mono text-[11px] tracking-[0.14em] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--accent)]/40 px-2.5 py-1.5 transition-colors duration-200';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[var(--surface)]/80 backdrop-blur-md border-b border-[var(--border)]' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="flex items-center justify-between h-16">
-          <a href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-[var(--accent)] rounded-md flex items-center justify-center">
-              <span className="text-[var(--bg)] font-bold text-sm">B</span>
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4">
+      <div
+        className={`max-w-6xl mx-auto brackets border border-[var(--border)] backdrop-blur-md transition-all duration-200 ${
+          isScrolled ? 'bg-[var(--surface-strong)]' : 'bg-[var(--surface)]'
+        }`}
+      >
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3">
+          <a href="/" className="flex items-center gap-3 group">
+            <div className="w-7 h-7 border border-[var(--border)] bg-[var(--accent)]/50 flex items-center justify-center group-hover:bg-[var(--accent)] transition-colors duration-200">
+              <span className="font-mono font-bold text-xs text-[var(--text)]">B</span>
             </div>
-            <span className="font-mono font-semibold text-lg">brandon.dev</span>
+            <div className="hidden sm:flex flex-col leading-none">
+              <span className="font-mono text-xs font-semibold tracking-[0.14em] text-[var(--text)]">BRANDON.DEV</span>
+              <span className="tech-label mt-1">SYSTEM: PORTFOLIO</span>
+            </div>
           </a>
 
-          <nav className="hidden md:flex items-center space-x-8">
-            {[
-              { href: '/#home', label: 'Home' },
-              { href: '/#about', label: 'About' },
-            ].map(l => (
-              <a key={l.href} href={l.href} className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative group">
-                {l.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all group-hover:w-full" />
-              </a>
+          <nav className="hidden md:flex items-center gap-1">
+            {NAV_LINKS.slice(0, 2).map((link) => (
+              <a key={link.href} href={link.href} className={navLink}>{link.label}</a>
             ))}
-            
-            {/* Works dropdown */}
+
             <div
-              className="relative"
+              className="relative flex items-center"
               onMouseEnter={() => setWorksOpen(true)}
               onMouseLeave={() => setWorksOpen(false)}
             >
-              <a href="/#works" className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative">
-                Works
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all group-hover:w-full" />
-              </a>
+              <a href="/#works" className={navLink}>WORKS</a>
               <AnimatePresence>
                 {worksOpen && (
                   <motion.div
-                    key="works-dd"
-                    className="absolute top-full left-0 mt-2 w-56 bg-[var(--surface)] border border-[var(--border)] rounded-lg shadow-lg z-50"
                     initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-60 panel py-1"
                   >
-                    <div className="py-2">
-                      <a href="/projects/origami-design" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Origami Web Design</a>
-                      <a href="/projects/kims-mart" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Kims Mart Davis</a>
-                      <a href="/projects/chloe-portfolio" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Chloe Yap Portfolio</a>
-                      <a href="/projects/pioneer" className="block px-4 py-2 text-sm text-[var(--text)] hover:bg-[var(--surface)]/60 hover:text-[var(--accent)] transition-colors">Pioneer</a>
-                    </div>
+                    {WORK_LINKS.map((link, i) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="flex items-center gap-3 px-4 py-2.5 font-mono text-[11px] tracking-[0.1em] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--accent)]/40 transition-colors duration-200"
+                      >
+                        <span className="text-[var(--line)]">{String(i + 1).padStart(2, '0')}</span>
+                        {link.label.toUpperCase()}
+                      </a>
+                    ))}
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            <a href="/#resume" className="text-[var(--text)] hover:text-[var(--accent)] transition-colors relative group">
-              Resume
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent)] transition-all group-hover:w-full" />
-            </a>
+            {NAV_LINKS.slice(2).map((link) => (
+              <a key={link.href} href={link.href} className={navLink}>{link.label}</a>
+            ))}
           </nav>
 
-          <button onClick={toggleTheme} className="p-2 rounded-md hover:bg-[var(--surface)] transition-colors" aria-label={`Switch theme`}>
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"></svg>
+          <div className="hidden md:flex items-center gap-4">
+            <span className="tech-label flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-[var(--accent-strong)] inline-block animate-pulse" />
+              STATUS: ONLINE
+            </span>
+          </div>
+
+          <button
+            type="button"
+            className="md:hidden p-2 text-[var(--text)]"
+            aria-label="Toggle menu"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
           </button>
         </div>
+
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.nav
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden overflow-hidden border-t border-[var(--border-soft)]"
+            >
+              <div className="flex flex-col px-4 py-3">
+                {[NAV_LINKS[0], NAV_LINKS[1], { href: '/#works', label: 'WORKS' }, NAV_LINKS[2], NAV_LINKS[3]].map((link, i) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="flex items-center gap-3 py-2.5 font-mono text-xs tracking-[0.14em] text-[var(--muted)] hover:text-[var(--text)]"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <span className="text-[var(--line)] text-[10px]">{String(i + 1).padStart(2, '0')}</span>
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </div>
     </header>
-  )
+  );
 }

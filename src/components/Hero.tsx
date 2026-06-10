@@ -1,101 +1,111 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import IdBadgeHeroCard from '@/components/IdBadgeHeroCard';
+import HudButton from '@/components/HudButton';
 import styles from './Hero.module.css';
 
-export default function Hero(){
-  const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => { setIsVisible(true); }, []);
+const STATS = [
+  { value: '4+', label: 'COMPLETED PROJECTS' },
+  { value: '02', label: 'INTERNSHIPS' },
+  { value: 'FS', label: 'FULL-STACK DEVELOPER' },
+];
 
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+export default function Hero() {
   return (
     <section id="home" className={styles['hero-section']}>
+      {/* Blueprint cross lines */}
+      <div className={styles['hero-lines']} aria-hidden="true">
+        <span className={styles['line-h1']} />
+        <span className={styles['line-h2']} />
+        <span className={styles['line-v1']} />
+        <span className={styles['line-v2']} />
+      </div>
+
+      {/* Abstract pale blue shape */}
+      <div className={styles['hero-shape']} aria-hidden="true" />
+
       <div className={styles['hero-container']}>
+        {/* Top metadata strip */}
+        <div className={styles['hero-meta-row']} aria-hidden="true">
+          <span className="tech-label">COORDINATES: 36.6002° N / 121.8947° W</span>
+          <span className="tech-label">MODE: DESIGN / DEVELOPMENT</span>
+          <span className="tech-label">BUILD: 2026</span>
+        </div>
+
         <div className={styles['hero-grid']}>
           <motion.div
             className={styles['hero-content']}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.5 }}
           >
-            <div>
-              <motion.h1 className={styles['hero-title']} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.5 }}>
-                I&apos;m Brandon, a Software Engineer <code className="font-mono text-[var(--accent)]">() =&gt;</code>
-              </motion.h1>
-              <motion.p className={styles['hero-subtitle']} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }}>
-                I love creating websites and software solutions React, Node, and Python.<span className="caret" />
-              </motion.p>
+            <p className={styles['hero-system']}>
+              [ SYSTEM ONLINE ] <span className="blink-cursor" />
+            </p>
+
+            <div className={styles['hero-title-stack']}>
+              <span className={styles['hero-title-ghost']} aria-hidden="true">BRANDON</span>
+              <h1 className={styles['hero-title']}>
+                Brandon
+                <br />
+                Grimaldo
+              </h1>
             </div>
 
-            <motion.div className={styles['hero-button-group']} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35, duration: 0.4 }}>
-              <a href="/#works" className={styles['hero-secondary-button']}>
-                View Projects
-              </a>
-              <a href="/#resume" className={styles['hero-secondary-button']}>
-                View Resume
-              </a>
-            </motion.div>
+            <p className={styles['hero-role']}>FULL-STACK DEVELOPER / WEB DESIGNER</p>
 
-            <div className={styles['hero-scroll-indicator']}>
-              <span className="font-mono">SCROLL ↓</span>
-              <div className={styles['hero-scroll-line']} />
+            <p className={styles['hero-subtitle']}>
+              Building clean websites, apps, and digital systems with strong visuals
+              and useful functionality.
+            </p>
+
+            <div className={styles['hero-buttons']}>
+              <HudButton href="/#works">View My Work</HudButton>
+              <HudButton
+                variant="ghost"
+                href="/images/brandonresume/Brandon Grimaldo Resume.pdf"
+                download="Brandon Grimaldo Resume.pdf"
+              >
+                Download Resume
+              </HudButton>
             </div>
           </motion.div>
 
-          <motion.div className={styles['hero-avatar-container']} initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}>
-            <div className={styles['hero-avatar-wrapper']}>
-              {/* soft glow behind avatar */}
-              <div className={styles['hero-avatar-glow']} />
-
-              {/* portrait */}
-              <div className={styles['hero-avatar']}>
-                <Image
-                  src="/images/IMG_0757.jpg"
-                  alt="Brandon portrait"
-                  fill
-                  sizes="(min-width:1024px) 24rem, 16rem"
-                  priority
-                  className="object-cover"
-                />
+          <motion.div
+            className={styles['hero-badge-col']}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.5 }}
+          >
+            <div className={`${styles['hero-badge-frame']} brackets`}>
+              <div className={styles['hero-badge-meta-top']}>
+                <span className="tech-label">SUBJECT FILE</span>
+                <span className="tech-label">REF: BG-00043</span>
               </div>
-
-              {/* floating dots */}
-              <div className={styles['hero-floating-dot-1']} />
-              <div className={styles['hero-floating-dot-2']} />
+              <IdBadgeHeroCard />
+              <div className={styles['hero-badge-meta-bottom']}>
+                <span className="tech-label">CLEARANCE: FULL-STACK</span>
+              </div>
             </div>
           </motion.div>
         </div>
 
-        <div className={styles['hero-stats-container']}>
-          <div className={styles['hero-stats-grid']}>
-            {[
-              { n: '4', l: 'Shipped Projects' },
-              { n: '05', l: 'Years Coding' },
-              { n: '2', l: 'Internships' },
-            ].map(s => (
-              <div key={s.l} className={styles['hero-stat-item']}>
-                <div className={styles['hero-stat-number']}>{s.n}</div>
-                <div className={styles['hero-stat-label']}>{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Stats strip */}
+        <motion.div
+          className={styles['hero-stats']}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.4 }}
+        >
+          {STATS.map((stat) => (
+            <div key={stat.label} className={styles['hero-stat']}>
+              <span className={styles['hero-stat-value']}>{stat.value}</span>
+              <span className="tech-label">{stat.label}</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
-
-      <button
-        onClick={scrollToAbout}
-        className={styles['hero-scroll-button']}
-        aria-label="Scroll to about section"
-      >
-        <svg className={styles['hero-scroll-icon']} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </button>
     </section>
-  )
+  );
 }

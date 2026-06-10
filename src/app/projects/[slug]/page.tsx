@@ -367,7 +367,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="space-y-8">
           {/* Overview + Features */}
           <div className="space-y-8">
-            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-5 sm:p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-[24px] backdrop-blur-xl p-5 sm:p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               <h2 className="text-lg sm:text-xl font-semibold mb-3">Overview</h2>
               <p className="text-[var(--muted)] leading-relaxed">
                 {isPioneer
@@ -404,7 +404,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </motion.div>
 
             {/* Tech Stack integrated below Overview */}
-            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-[24px] backdrop-blur-xl p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
               <h2 className="text-xl font-semibold mb-3">Tech Stack</h2>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map(t => (
@@ -413,7 +413,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </div>
             </motion.div>
 
-            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-5 sm:p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-[24px] backdrop-blur-xl p-5 sm:p-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.05 }}>
               <h2 className="text-lg sm:text-xl font-semibold mb-4">Key Features</h2>
               <ul className="grid sm:grid-cols-2 gap-3">
                 {project.features.map(f => (
@@ -426,7 +426,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </motion.div>
 
             {isChloe && (
-              <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6">
+              <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-[24px] backdrop-blur-xl p-6">
                 <h2 className="text-xl font-semibold mb-4">Portfolio Highlights</h2>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {[
@@ -451,7 +451,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             )}
 
             {/* Narrative case study */}
-            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-5 sm:p-6 space-y-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
+            <motion.div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-[24px] backdrop-blur-xl p-5 sm:p-6 space-y-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}>
               {project.designPhilosophy && (
                 <div>
                   <h2 className="text-lg sm:text-xl font-semibold mb-2">Design Philosophy</h2>
@@ -479,7 +479,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </motion.div>
 
             {isChloe && (
-              <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-2xl p-6">
+              <div className="bg-[var(--surface)]/50 border border-[var(--border)] rounded-[24px] backdrop-blur-xl p-6">
                 <h2 className="text-xl font-semibold mb-4">Advanced Techniques</h2>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {[
