@@ -34,7 +34,9 @@
 }
 
 html, body, #__next, main, #main {
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.88), rgba(238, 241, 242, 0.82) 42%, var(--bg) 82%),
+    var(--bg);
 }
 
 body {
@@ -111,32 +113,33 @@ body {
   .hud-btn {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3;
     font-family: var(--font-ibm-plex-mono), monospace;
-    font-size: 0.75rem;
+    min-width: 11.5rem;
+    font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--text);
-    border: 1px solid var(--border);
-    background: transparent;
+    border: 1px solid var(--accent-strong);
+    background: rgba(255, 255, 255, 0.2);
     transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
   }
 
   .hud-btn:hover {
-    background: var(--accent);
+    background: rgba(185, 211, 229, 0.32);
     border-color: var(--accent-strong);
   }
 
   .hud-btn-ghost {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3;
     font-family: var(--font-ibm-plex-mono), monospace;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
+    min-width: 11.5rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
-    border: 1px solid transparent;
-    border-bottom: 1px solid var(--border);
-    background: transparent;
+    border: 1px solid var(--border-soft);
+    background: rgba(255, 255, 255, 0.14);
     transition: color 200ms ease, border-color 200ms ease, background 200ms ease;
   }
 

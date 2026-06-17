@@ -12,36 +12,6 @@ import { useState } from 'react';
 
 const FEATURED_PROJECTS: ProjectCardData[] = [
   {
-    slug: 'origami-design',
-    title: 'Origami Web Design',
-    category: 'Design Agency',
-    description:
-      'A modern design agency website showcasing creative services and portfolio work. Features interactive elements, smooth transitions, and responsive layouts.',
-    tech: ['React', 'GSAP', 'Sass', 'Netlify'],
-    thumbnail: '/images/origamiwebdesign/1.png',
-    live: 'https://www.origamiwebdesign.com',
-  },
-  {
-    slug: 'kims-mart',
-    title: 'Kims Mart Davis',
-    category: 'E-commerce',
-    description:
-      'A full-stack e-commerce platform for a local market in Davis. Features inventory management, online ordering, and payment processing.',
-    tech: ['React', 'Express', 'MongoDB', 'Stripe'],
-    thumbnail: '/images/kimsmart/1.png',
-    live: 'https://kimsmartdavis.com',
-  },
-  {
-    slug: 'chloe-portfolio',
-    title: 'Chloe Yap Portfolio',
-    category: 'Creative Portfolio',
-    description:
-      'A stunning portfolio website showcasing creative work and artistic projects. Features smooth animations, responsive design, and elegant typography.',
-    tech: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
-    thumbnail: '/images/chloeyap/first_image.png',
-    live: 'https://chloeyap.com',
-  },
-  {
     slug: 'sunny-day-socials',
     title: 'Sunny Day Socials',
     category: 'Marketing Site',
@@ -60,6 +30,36 @@ const FEATURED_PROJECTS: ProjectCardData[] = [
     tech: ['Next.js 16', 'React 19', 'Supabase', 'Pterodactyl'],
     thumbnail: '/images/kaizen-hosting/1.png',
     live: 'https://www.kaizenhosting.com/',
+  },
+  {
+    slug: 'origami-design',
+    title: 'Origami Web Design',
+    category: 'Design Agency',
+    description:
+      'A modern design agency website showcasing creative services and portfolio work. Features interactive elements, smooth transitions, and responsive layouts.',
+    tech: ['React', 'GSAP', 'Sass', 'Netlify'],
+    thumbnail: '/images/origamiwebdesign/1.png',
+    live: 'https://www.origamiwebdesign.com',
+  },
+  {
+    slug: 'chloe-portfolio',
+    title: 'Chloe Yap Portfolio',
+    category: 'Creative Portfolio',
+    description:
+      'A stunning portfolio website showcasing creative work and artistic projects. Features smooth animations, responsive design, and elegant typography.',
+    tech: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+    thumbnail: '/images/chloeyap/first_image.png',
+    live: 'https://chloeyap.com',
+  },
+  {
+    slug: 'kims-mart',
+    title: 'Kims Mart Davis',
+    category: 'E-commerce',
+    description:
+      'A full-stack e-commerce platform for a local market in Davis. Features inventory management, online ordering, and payment processing.',
+    tech: ['React', 'Express', 'MongoDB', 'Stripe'],
+    thumbnail: '/images/kimsmart/1.png',
+    live: 'https://kimsmartdavis.com',
   },
 ];
 

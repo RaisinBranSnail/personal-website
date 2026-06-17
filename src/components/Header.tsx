@@ -30,27 +30,27 @@ export default function Header() {
   }, []);
 
   const navLink =
-    'inline-block font-mono text-[11px] tracking-[0.14em] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--accent)]/40 px-2.5 py-1.5 transition-colors duration-200';
+    'inline-block font-mono text-[10px] tracking-[0.18em] text-[var(--muted)] hover:text-[var(--text)] hover:bg-[var(--accent)]/35 px-2.5 py-1.5 transition-colors duration-200';
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4">
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-5">
       <div
-        className={`max-w-6xl mx-auto brackets border border-[var(--border)] backdrop-blur-md transition-all duration-200 ${
+        className={`max-w-[900px] mx-auto brackets border border-[var(--border)] backdrop-blur-md transition-all duration-200 ${
           isScrolled ? 'bg-[var(--surface-strong)]' : 'bg-[var(--surface)]'
         }`}
       >
-        <div className="flex items-center justify-between px-4 sm:px-6 py-3">
+        <div className="flex items-center justify-between px-4 sm:px-5 py-3">
           <a href="/" className="flex items-center gap-3 group">
-            <div className="w-7 h-7 border border-[var(--border)] bg-[var(--accent)]/50 flex items-center justify-center group-hover:bg-[var(--accent)] transition-colors duration-200">
-              <span className="font-mono font-bold text-xs text-[var(--text)]">B</span>
+            <div className="w-6 h-6 border border-[var(--border)] bg-[var(--accent)]/35 flex items-center justify-center group-hover:bg-[var(--accent)] transition-colors duration-200">
+              <span className="font-mono font-bold text-[10px] text-[var(--text)]">B</span>
             </div>
             <div className="hidden sm:flex flex-col leading-none">
-              <span className="font-mono text-xs font-semibold tracking-[0.14em] text-[var(--text)]">BRANDON.DEV</span>
+              <span className="font-mono text-[11px] font-semibold tracking-[0.16em] text-[var(--text)]">BRANDON.DEV</span>
               <span className="tech-label mt-1">SYSTEM: PORTFOLIO</span>
             </div>
           </a>
 
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-3">
             {NAV_LINKS.slice(0, 2).map((link) => (
               <a key={link.href} href={link.href} className={navLink}>{link.label}</a>
             ))}
@@ -68,7 +68,7 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-60 panel py-1"
+                    className="absolute top-full left-0 mt-2 w-60 border border-[var(--border)] bg-[var(--bg-alt)] shadow-[0_16px_40px_rgba(27,36,48,0.12)] py-1"
                   >
                     {WORK_LINKS.map((link, i) => (
                       <a
