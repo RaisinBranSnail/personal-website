@@ -111,8 +111,8 @@ export default function Hero() {
             <HudButton href="/#works">View My Work</HudButton>
             <HudButton
               variant="ghost"
-              href="/images/brandonresume/Brandon Grimaldo Resume.pdf"
-              download="Brandon Grimaldo Resume.pdf"
+              href="/images/brandonresume/Brandon Grimaldo Resume File.pdf"
+              download="Brandon Grimaldo Resume File.pdf"
             >
               Download Resume
             </HudButton>

@@ -100,7 +100,7 @@ export default function Home() {
 
   const copyResumeToClipboard = async () => {
     try {
-      const response = await fetch('/images/brandonresume/Brandon Grimaldo Resume.pdf');
+      const response = await fetch('/images/brandonresume/Brandon Grimaldo Resume File.pdf');
       const blob = await response.blob();
       const clipboardItem = new ClipboardItem({ 'application/pdf': blob });
       await navigator.clipboard.write([clipboardItem]);
@@ -109,7 +109,7 @@ export default function Home() {
     } catch {
       try {
         await navigator.clipboard.writeText(
-          window.location.origin + '/images/brandonresume/Brandon Grimaldo Resume.pdf'
+          window.location.origin + '/images/brandonresume/Brandon Grimaldo Resume File.pdf'
         );
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
@@ -217,7 +217,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div className="panel brackets p-3">
             <Image
-              src="/images/brandonresume/Brandon Grimaldo Resume-1.png"
+              src="/images/brandonresume/Brandon Grimaldo Resume File-1.png"
               alt="Brandon Grimaldo Resume"
               width={1200}
               height={1600}
@@ -232,14 +232,14 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <HudButton
-                  href="/images/brandonresume/Brandon Grimaldo Resume.pdf"
-                  download="Brandon Grimaldo Resume.pdf"
+                  href="/images/brandonresume/Brandon Grimaldo Resume File.pdf"
+                  download="Brandon Grimaldo Resume File.pdf"
                 >
                   Download
                 </HudButton>
                 <HudButton
                   variant="ghost"
-                  href="/images/brandonresume/Brandon Grimaldo Resume.pdf"
+                  href="/images/brandonresume/Brandon Grimaldo Resume File.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
